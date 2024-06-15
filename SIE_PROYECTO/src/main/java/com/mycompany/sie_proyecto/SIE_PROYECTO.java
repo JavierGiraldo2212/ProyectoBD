@@ -22,12 +22,14 @@ public class SIE_PROYECTO {
         LoginEgresado loginEgresado = new LoginEgresado(cardPanel);
         LoginEmpresa loginEmpresa = new LoginEmpresa(cardPanel);
         LoginDirectivo loginDirectivo = new LoginDirectivo(cardPanel);
+        mainDirectivo maindirectivo = new mainDirectivo(cardPanel);
         
         // Add both panels to card panel
         cardPanel.add(mainPanel, "mainPanel");
         cardPanel.add(loginEgresado, "loginEgresado");
         cardPanel.add(loginEmpresa, "loginEmpresa");
         cardPanel.add(loginDirectivo, "loginDirectivo");
+        cardPanel.add(maindirectivo,"mainDirectivo");
 
         // Add card panel to frame
         frame.add(cardPanel);

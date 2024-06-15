@@ -17,35 +17,41 @@ import javax.swing.JOptionPane;
 public class UsersSesions {
     private static final String bd = "ejemplo";
     private static final String host = "localhost";
-    private static final String server = "jdbc:mysql://" + host + "/" + bd + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private static final String server = "jdbc:mysql://" + host + "/" + bd
+            + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private Connection connection;
 
-    public boolean login(String user, String password, String requiredRole){
+    public boolean login(String user, String password, String requiredRole) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(server, user, password);
+            connection = DriverManager.getConnection(server, user, password);
             System.out.println("Conexión a base de datos " + bd + " ... OK");
 
             String roles = getUserRoles(connection, user);
             if (roles != null && !roles.isEmpty()) {
                 System.out.println("Los roles del usuario " + user + " son: " + roles);
                 if (roles.contains(requiredRole)) {
-                    connection.close();
                     return true;
                 } else {
-                    JOptionPane.showMessageDialog(null, "El usuario " + user + " no tiene el rol requerido: " + requiredRole, "Error de autorización", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null,
+                            "El usuario " + user + " no tiene el rol requerido: " + requiredRole,
+                            "Error de autorización", JOptionPane.ERROR_MESSAGE);
                     connection.close();
                     return false;
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "No se pudieron encontrar los roles del usuario " + user, "Error de autorización", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "No se pudieron encontrar los roles del usuario " + user,
+                        "Error de autorización", JOptionPane.ERROR_MESSAGE);
                 connection.close();
                 return false;
             }
         } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "Error cargando el Driver MySQL JDBC", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error cargando el Driver MySQL JDBC", "Error",
+                    JOptionPane.ERROR_MESSAGE);
             return false;
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Imposible realizar conexión con " + bd, "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Imposible realizar conexión con " + bd, "Error",
+                    JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
@@ -69,9 +75,26 @@ public class UsersSesions {
                 }
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error obteniendo los roles del usuario", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error obteniendo los roles del usuario", "Error",
+                    JOptionPane.ERROR_MESSAGE);
             return null;
         }
         return roles.toString();
     }
+
+    public boolean logout() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+                System.out.println("Conexión cerrada.");
+                return true;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error cerrando la conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            connection = null;
+        }
+        return false;
+    }
+
 }

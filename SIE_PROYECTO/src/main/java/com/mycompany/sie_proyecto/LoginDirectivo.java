@@ -17,7 +17,6 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
@@ -128,7 +127,7 @@ public class LoginDirectivo extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Logic for login button
                 CardLayout cl = (CardLayout) cardPanel.getLayout();
-                if(userF.login(user.getText(),password.getText(),"rol_ejemplo2")) cl.show(cardPanel, "mainPanel");
+                if(userF.login(user.getText(),password.getText(),"rol_ejemplo")) cl.show(cardPanel, "mainDirectivo");
             }
         });
 
