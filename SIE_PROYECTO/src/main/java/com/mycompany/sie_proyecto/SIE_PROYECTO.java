@@ -1,11 +1,13 @@
 package com.mycompany.sie_proyecto;
 
+import Functions.UsersSesions;
 import javax.swing.*;
 import java.awt.*;
 
 public class SIE_PROYECTO {
     public static void main(String[] args) {
         // Create the frame
+        UsersSesions userF = new UsersSesions();
         JFrame frame = new JFrame("Sistema de Información de Egresados");
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,10 +23,15 @@ public class SIE_PROYECTO {
         // Create the login panel for "Egresados" and "Empresa"
         LoginEgresado loginEgresado = new LoginEgresado(cardPanel);
         LoginEmpresa loginEmpresa = new LoginEmpresa(cardPanel);
-        LoginDirectivo loginDirectivo = new LoginDirectivo(cardPanel);
-        mainDirectivo maindirectivo = new mainDirectivo(cardPanel);
         
-        // Add both panels to card panel
+        // Create the login panel for "Directivo" and its mainPanel
+        LoginDirectivo loginDirectivo = new LoginDirectivo(cardPanel, userF);
+        mainDirectivo maindirectivo = new mainDirectivo(cardPanel, userF);
+        
+        
+        
+        
+        // Add all panels to card panel
         cardPanel.add(mainPanel, "mainPanel");
         cardPanel.add(loginEgresado, "loginEgresado");
         cardPanel.add(loginEmpresa, "loginEmpresa");

@@ -19,6 +19,7 @@ public class UsersSesions {
     private static final String host = "localhost";
     private static final String server = "jdbc:mysql://" + host + "/" + bd
             + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    
     private Connection connection;
 
     public boolean login(String user, String password, String requiredRole) {

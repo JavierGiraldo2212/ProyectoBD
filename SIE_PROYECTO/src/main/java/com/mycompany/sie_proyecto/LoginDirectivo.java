@@ -22,11 +22,11 @@ import javax.swing.border.EmptyBorder;
 
 public class LoginDirectivo extends JPanel {
 
-    UsersSesions userF = new UsersSesions();
+    // UsersSesions userF = new UsersSesions();
     private JTextField user;
     private JPasswordField password;
 
-    public LoginDirectivo(JPanel cardPanel) {
+    public LoginDirectivo(JPanel cardPanel, UsersSesions userF) {
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(5, 5, 5, 5));
 
