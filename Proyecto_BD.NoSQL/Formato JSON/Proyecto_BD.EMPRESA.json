@@ -1,0 +1,128 @@
+[{
+  "_id": {
+    "$oid": "666e3c1677b77cdbe2e75e9e"
+  },
+  "NIT": 900100100,
+  "Nombre": "IBM",
+  "Descripcion": "Fabricación de productos electrónicos",
+  "Campo": "Tecnología",
+  "Telefono": {
+    "$numberLong": "3101002001"
+  },
+  "Direccion": "Calle 123 #45-67",
+  "CorreoElectronico": "contacto@IBM.com",
+  "PaginaWeb": "www.IBM.com",
+  "REPRESENTANTE_EMPRESA_Cedula": "1001001001"
+},
+{
+  "_id": {
+    "$oid": "666e3c1677b77cdbe2e75e9f"
+  },
+  "NIT": 900100101,
+  "Nombre": "BanUnal",
+  "Descripcion": "Servicios financieros y bancarios",
+  "Campo": "Finanzas",
+  "Telefono": {
+    "$numberLong": "3101002002"
+  },
+  "Direccion": "Carrera 7 #89-10",
+  "CorreoElectronico": "info@BanUnal.com",
+  "PaginaWeb": "www.BanUnal.com",
+  "REPRESENTANTE_EMPRESA_Cedula": "1001001002"
+},
+{
+  "_id": {
+    "$oid": "666e3c1677b77cdbe2e75ea0"
+  },
+  "NIT": 900100102,
+  "Nombre": "Perez abogados",
+  "Descripcion": "Consultoría y asesoría legal",
+  "Campo": "Legal",
+  "Telefono": {
+    "$numberLong": "3101002003"
+  },
+  "Direccion": "Avenida 15 #23-45",
+  "CorreoElectronico": "legal@Perezabogados.com",
+  "PaginaWeb": "www.Perezabogados.com",
+  "REPRESENTANTE_EMPRESA_Cedula": "1001001003"
+},
+{
+  "_id": {
+    "$oid": "666e3c1677b77cdbe2e75ea1"
+  },
+  "NIT": 900100103,
+  "Nombre": "ingesoft",
+  "Descripcion": "Desarrollo de software a medida",
+  "Campo": "Tecnología",
+  "Telefono": {
+    "$numberLong": "3101002004"
+  },
+  "Direccion": "Calle 45 #12-34",
+  "CorreoElectronico": "desarrollo@ingesoft.com",
+  "PaginaWeb": "www.ingesoft.com",
+  "REPRESENTANTE_EMPRESA_Cedula": "1001001004"
+},
+{
+  "_id": {
+    "$oid": "666e3c1677b77cdbe2e75ea2"
+  },
+  "NIT": 900100104,
+  "Nombre": "Agroriente",
+  "Descripcion": "Comercio de productos agrícolas",
+  "Campo": "Agricultura",
+  "Telefono": {
+    "$numberLong": "3101002005"
+  },
+  "Direccion": "Carrera 8 #56-78",
+  "CorreoElectronico": "ventas@Agroriente.com",
+  "PaginaWeb": "www.Agroriente.com",
+  "REPRESENTANTE_EMPRESA_Cedula": "1001001005"
+},
+{
+  "_id": {
+    "$oid": "666e3c1677b77cdbe2e75ea3"
+  },
+  "NIT": 900100105,
+  "Nombre": "publiUnal",
+  "Descripcion": "Marketing digital y publicidad",
+  "Campo": "Marketing",
+  "Telefono": {
+    "$numberLong": "3101002006"
+  },
+  "Direccion": "Avenida 9 #34-56",
+  "CorreoElectronico": "marketing@publiUnal.com",
+  "PaginaWeb": "www.publiUnal.com",
+  "REPRESENTANTE_EMPRESA_Cedula": "1001001006"
+},
+{
+  "_id": {
+    "$oid": "666e3c1677b77cdbe2e75ea4"
+  },
+  "NIT": 900100106,
+  "Nombre": "Aeroexpress",
+  "Descripcion": "Logística y distribución",
+  "Campo": "Logística",
+  "Telefono": {
+    "$numberLong": "3101002007"
+  },
+  "Direccion": "Calle 67 #89-12",
+  "CorreoElectronico": "logistica@Aeroexpress.com",
+  "PaginaWeb": "www.Aeroexpress.com",
+  "REPRESENTANTE_EMPRESA_Cedula": "1001001007"
+},
+{
+  "_id": {
+    "$oid": "666e3c1677b77cdbe2e75ea5"
+  },
+  "NIT": 900100107,
+  "Nombre": "CryptoInversiones",
+  "Descripcion": "Consultoría de negocios",
+  "Campo": "Consultoría",
+  "Telefono": {
+    "$numberLong": "3101002008"
+  },
+  "Direccion": "Carrera 10 #45-67",
+  "CorreoElectronico": "consultoria@CryptoInversiones.com",
+  "PaginaWeb": "www.CryptoInversiones.com",
+  "REPRESENTANTE_EMPRESA_Cedula": "1001001008"
+}]

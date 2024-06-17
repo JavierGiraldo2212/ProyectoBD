@@ -1,0 +1,11 @@
+_id,idFACULTAD,SEDE_idSEDE,Nombre,Oficina,CorreoAdministracion,PBX,EXT,PERSONAL_APOYO_Cedula
+666e40f377b77cdbe2e75ec0,1,1,Facultad de Ingeniería,Edif.U - Of. 100,admin_facu.ing@unal.edu.co,1234567,201,1001002009
+666e40f377b77cdbe2e75ec1,2,2,Facultad de Artes,Edif.U - Of. 101,admin_facu.art@unal.edu.co,1234568,202,1001002010
+666e40f377b77cdbe2e75ec2,3,3,Facultad de Ciencias Humanas,Edif.U - Of. 102,admin_facu.cienciasH@unal.edu.co,1234569,203,1001002011
+666e40f377b77cdbe2e75ec3,4,4,Facultad de Ciencias,Edif.U - Of. 103,admin_facu.ciencias@unal.edu.co,1234510,204,1001002012
+666e40f377b77cdbe2e75ec4,5,1,Facultad de Ciencias Económicas,Edif.U - Of. 104,admin_facu.cienciasE@unal.edu.co,1234511,205,1001002013
+666e40f377b77cdbe2e75ec5,6,2,Facultad de Medicina,Edif.U - Of. 105,admin_facu.med@unal.edu.co,1234512,206,1001002014
+666e40f377b77cdbe2e75ec6,7,3,Facultad de Ciencias Agrarias,Edif.U - Of. 106,admin_facu.cienciasA@unal.edu.co,1234513,207,1001002015
+666e40f377b77cdbe2e75ec7,8,4,Facultad de Odontología,Edif.U - Of. 107,admin_facu.odont@unal.edu.co,1234514,208,1001002016
+666e40f377b77cdbe2e75ec8,9,1,Facultad de Medicina Veterinaria y de Zootecnia,Edif.U - Of. 108,admin_facu.medVZ@unal.edu.co,1234515,209,1001002017
+666e40f377b77cdbe2e75ec9,10,2,"Facultad de Derecho, Ciencias Políticas y Sociales",Edif.U - Of. 109,admin_facu.Derecho@unal.edu.co,1234516,210,1001002018

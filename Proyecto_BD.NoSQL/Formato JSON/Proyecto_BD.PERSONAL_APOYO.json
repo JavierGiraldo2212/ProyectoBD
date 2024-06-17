@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75eb6"
+  },
+  "Cedula": 1001002009,
+  "Nombres": "Johan",
+  "PrimerApellido": "Ramos",
+  "SegundoApellido": "Mosquera",
+  "Correo": "johan.ramos@unal.edu.co",
+  "Telefono": "3002003001"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75eb7"
+  },
+  "Cedula": 1001002010,
+  "Nombres": "Brian",
+  "PrimerApellido": "Pérez",
+  "SegundoApellido": "Ortiz",
+  "Correo": "brian.perez@unal.edu.co",
+  "Telefono": "3002003002"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75eb8"
+  },
+  "Cedula": 1001002011,
+  "Nombres": "Gustavo",
+  "PrimerApellido": "Cortés",
+  "SegundoApellido": "López",
+  "Correo": "gustavo.cortes@unal.edu.co",
+  "Telefono": "3002003003"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75eb9"
+  },
+  "Cedula": 1001002012,
+  "Nombres": "John",
+  "PrimerApellido": "Amaya",
+  "SegundoApellido": "López",
+  "Correo": "john.amaya@unal.edu.co",
+  "Telefono": "3002003004"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75eba"
+  },
+  "Cedula": 1001002013,
+  "Nombres": "Lucho",
+  "PrimerApellido": "Flores",
+  "SegundoApellido": "Jiménez",
+  "Correo": "lucho.flores@unal.edu.co",
+  "Telefono": "3002003005"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75ebb"
+  },
+  "Cedula": 1001002014,
+  "Nombres": "Ximena",
+  "PrimerApellido": "Peña",
+  "SegundoApellido": "Alvarado",
+  "Correo": "ximena.peña@unal.edu.co",
+  "Telefono": "3002003006"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75ebc"
+  },
+  "Cedula": 1001002015,
+  "Nombres": "Eva",
+  "PrimerApellido": "Ospina",
+  "SegundoApellido": "Sánchez",
+  "Correo": "eva.ospina@unal.edu.co",
+  "Telefono": "3002003007"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75ebd"
+  },
+  "Cedula": 1001002016,
+  "Nombres": "Sara",
+  "PrimerApellido": "Sánchez",
+  "SegundoApellido": "Flores",
+  "Correo": "sara.samchez@unal.edu.co",
+  "Telefono": "3002003008"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75ebe"
+  },
+  "Cedula": 1001002017,
+  "Nombres": "Alejandra",
+  "PrimerApellido": "Ramirez",
+  "SegundoApellido": "Gonzales",
+  "Correo": "alejandra.ramirez@unal.edu.co",
+  "Telefono": "3002003009"
+},
+{
+  "_id": {
+    "$oid": "666e40ab77b77cdbe2e75ebf"
+  },
+  "Cedula": 1001002018,
+  "Nombres": "Paul",
+  "PrimerApellido": "Gonzales",
+  "SegundoApellido": "Garzón",
+  "Correo": "paul.gonzales@unal.edu.co",
+  "Telefono": "3002003010"
+}]

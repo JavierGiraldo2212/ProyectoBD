@@ -92,6 +92,7 @@ GRANT EXECUTE ON FUNCTION f_promedio_edad_equipo TO 'Coordinador de Sede'@'local
 GRANT EXECUTE ON FUNCTION f_Tiempo_experiencia TO 'Coordinador de Sede'@'localhost';
 GRANT EXECUTE ON FUNCTION f_Asistentes_catedra TO 'Coordinador de Sede'@'localhost';
 GRANT EXECUTE ON FUNCTION f_Asistentes_dialogos TO 'Coordinador de Sede'@'localhost';
+DROP USER IF EXISTS 'carlos.rodriguez.E'@'localhost';
 ----------------------------------------------------
 -- Creación de usuarios y asignación de roles --
 ----------------------------------------------------
@@ -284,5 +285,3 @@ GRANT Coordinador_de_Sede TO 'carlos.ramirez'@'localhost';
 SET DEFAULT ROLE Coordinador_de_Sede TO 'carlos.ramirez'@'localhost'; 
 
 FLUSH PRIVILEGES;
-
-

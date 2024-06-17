@@ -1,0 +1,104 @@
+[{
+  "_id": {
+    "$oid": "666e31b277b77cdbe2e75e96"
+  },
+  "No_oferta": 1,
+  "EMPRESA_NIT": 900100100,
+  "Estado": "Convocatoria abierta",
+  "Salario": 3000000,
+  "ExpRequerida": 4,
+  "Area": "Desarrollo de software",
+  "TipoContrato": "Término indefinido",
+  "FechaPublicacion": "2024-05-23"
+},
+{
+  "_id": {
+    "$oid": "666e31b277b77cdbe2e75e97"
+  },
+  "No_oferta": 2,
+  "EMPRESA_NIT": 900100101,
+  "Estado": "Convocatoria abierta",
+  "Salario": 3500000,
+  "ExpRequerida": 6,
+  "Area": "Servicios financieros",
+  "TipoContrato": "Prestación de servicios",
+  "FechaPublicacion": "2024-05-23"
+},
+{
+  "_id": {
+    "$oid": "666e31b277b77cdbe2e75e98"
+  },
+  "No_oferta": 3,
+  "EMPRESA_NIT": 900100102,
+  "Estado": "Convocatoria abierta",
+  "Salario": 2800000,
+  "ExpRequerida": 2,
+  "Area": "Consultoría legal",
+  "TipoContrato": "Término indefinido",
+  "FechaPublicacion": "2024-05-23"
+},
+{
+  "_id": {
+    "$oid": "666e31b277b77cdbe2e75e99"
+  },
+  "No_oferta": 4,
+  "EMPRESA_NIT": 900100103,
+  "Estado": "Convocatoria abierta",
+  "Salario": 3200000,
+  "ExpRequerida": 8,
+  "Area": "Desarrollo de software",
+  "TipoContrato": "Término indefinido",
+  "FechaPublicacion": "2024-05-23"
+},
+{
+  "_id": {
+    "$oid": "666e31b277b77cdbe2e75e9a"
+  },
+  "No_oferta": 5,
+  "EMPRESA_NIT": 900100104,
+  "Estado": "Convocatoria abierta",
+  "Salario": 2500000,
+  "ExpRequerida": 4,
+  "Area": "Comercio agrícola",
+  "TipoContrato": "Término fijo",
+  "FechaPublicacion": "2024-05-23"
+},
+{
+  "_id": {
+    "$oid": "666e31b277b77cdbe2e75e9b"
+  },
+  "No_oferta": 6,
+  "EMPRESA_NIT": 900100105,
+  "Estado": "Convocatoria abierta",
+  "Salario": 4000000,
+  "ExpRequerida": 6,
+  "Area": "Marketing digital",
+  "TipoContrato": "Prestación de servicios",
+  "FechaPublicacion": "2024-05-23"
+},
+{
+  "_id": {
+    "$oid": "666e31b277b77cdbe2e75e9c"
+  },
+  "No_oferta": 7,
+  "EMPRESA_NIT": 900100106,
+  "Estado": "Convocatoria abierta",
+  "Salario": 3500000,
+  "ExpRequerida": 4,
+  "Area": "Logística",
+  "TipoContrato": "Término indefinido",
+  "FechaPublicacion": "2024-05-23"
+},
+{
+  "_id": {
+    "$oid": "666e31b277b77cdbe2e75e9d"
+  },
+  "No_oferta": 8,
+  "EMPRESA_NIT": 900100107,
+  "Estado": "Convocatoria abierta",
+  "Salario": 3000000,
+  "ExpRequerida": 8,
+  "Area": "Consultoría de negocios",
+  "TipoContrato": "Término indefinido",
+  "FechaPublicacion": "2024-05-23"
+}]

@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "666e404e77b77cdbe2e75eb2"
+  },
+  "Nombre": "Universidad Nacional de Colombia - Bogotá",
+  "CorreoAdministracion": "admin_bogota@unal.edu.co",
+  "PBX": 1234567890,
+  "EXT": 101
+},
+{
+  "_id": {
+    "$oid": "666e404e77b77cdbe2e75eb3"
+  },
+  "Nombre": "Universidad Nacional de Colombia - Medellín",
+  "CorreoAdministracion": "admin_medellin@unal.edu.co",
+  "PBX": 1234567891,
+  "EXT": 102
+},
+{
+  "_id": {
+    "$oid": "666e404e77b77cdbe2e75eb4"
+  },
+  "Nombre": "Universidad Nacional de Colombia - Manizales",
+  "CorreoAdministracion": "admin_manizales@unal.edu.co",
+  "PBX": 1234567892,
+  "EXT": 103
+},
+{
+  "_id": {
+    "$oid": "666e404e77b77cdbe2e75eb5"
+  },
+  "Nombre": "Universidad Nacional de Colombia - Palmira",
+  "CorreoAdministracion": "admin_palmira@unal.edu.co",
+  "PBX": 1234567893,
+  "EXT": 104
+}]

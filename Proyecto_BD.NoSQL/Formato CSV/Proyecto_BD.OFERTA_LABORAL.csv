@@ -1,0 +1,9 @@
+_id,No_oferta,EMPRESA_NIT,Estado,Salario,ExpRequerida,Area,TipoContrato,FechaPublicacion
+666e31b277b77cdbe2e75e96,1,900100100,Convocatoria abierta,3000000,4,Desarrollo de software,Término indefinido,2024-05-23
+666e31b277b77cdbe2e75e97,2,900100101,Convocatoria abierta,3500000,6,Servicios financieros,Prestación de servicios,2024-05-23
+666e31b277b77cdbe2e75e98,3,900100102,Convocatoria abierta,2800000,2,Consultoría legal,Término indefinido,2024-05-23
+666e31b277b77cdbe2e75e99,4,900100103,Convocatoria abierta,3200000,8,Desarrollo de software,Término indefinido,2024-05-23
+666e31b277b77cdbe2e75e9a,5,900100104,Convocatoria abierta,2500000,4,Comercio agrícola,Término fijo,2024-05-23
+666e31b277b77cdbe2e75e9b,6,900100105,Convocatoria abierta,4000000,6,Marketing digital,Prestación de servicios,2024-05-23
+666e31b277b77cdbe2e75e9c,7,900100106,Convocatoria abierta,3500000,4,Logística,Término indefinido,2024-05-23
+666e31b277b77cdbe2e75e9d,8,900100107,Convocatoria abierta,3000000,8,Consultoría de negocios,Término indefinido,2024-05-23

@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec0"
+  },
+  "idFACULTAD": 1,
+  "SEDE_idSEDE": 1,
+  "Nombre": "Facultad de Ingeniería",
+  "Oficina": "Edif.U - Of. 100",
+  "CorreoAdministracion": "admin_facu.ing@unal.edu.co",
+  "PBX": "1234567",
+  "EXT": 201,
+  "PERSONAL_APOYO_Cedula": 1001002009
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec1"
+  },
+  "idFACULTAD": 2,
+  "SEDE_idSEDE": 2,
+  "Nombre": "Facultad de Artes",
+  "Oficina": "Edif.U - Of. 101",
+  "CorreoAdministracion": "admin_facu.art@unal.edu.co",
+  "PBX": "1234568",
+  "EXT": 202,
+  "PERSONAL_APOYO_Cedula": 1001002010
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec2"
+  },
+  "idFACULTAD": 3,
+  "SEDE_idSEDE": 3,
+  "Nombre": "Facultad de Ciencias Humanas",
+  "Oficina": "Edif.U - Of. 102",
+  "CorreoAdministracion": "admin_facu.cienciasH@unal.edu.co",
+  "PBX": "1234569",
+  "EXT": 203,
+  "PERSONAL_APOYO_Cedula": 1001002011
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec3"
+  },
+  "idFACULTAD": 4,
+  "SEDE_idSEDE": 4,
+  "Nombre": "Facultad de Ciencias",
+  "Oficina": "Edif.U - Of. 103",
+  "CorreoAdministracion": "admin_facu.ciencias@unal.edu.co",
+  "PBX": "1234510",
+  "EXT": 204,
+  "PERSONAL_APOYO_Cedula": 1001002012
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec4"
+  },
+  "idFACULTAD": 5,
+  "SEDE_idSEDE": 1,
+  "Nombre": "Facultad de Ciencias Económicas",
+  "Oficina": "Edif.U - Of. 104",
+  "CorreoAdministracion": "admin_facu.cienciasE@unal.edu.co",
+  "PBX": "1234511",
+  "EXT": 205,
+  "PERSONAL_APOYO_Cedula": 1001002013
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec5"
+  },
+  "idFACULTAD": 6,
+  "SEDE_idSEDE": 2,
+  "Nombre": "Facultad de Medicina",
+  "Oficina": "Edif.U - Of. 105",
+  "CorreoAdministracion": "admin_facu.med@unal.edu.co",
+  "PBX": "1234512",
+  "EXT": 206,
+  "PERSONAL_APOYO_Cedula": 1001002014
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec6"
+  },
+  "idFACULTAD": 7,
+  "SEDE_idSEDE": 3,
+  "Nombre": "Facultad de Ciencias Agrarias",
+  "Oficina": "Edif.U - Of. 106",
+  "CorreoAdministracion": "admin_facu.cienciasA@unal.edu.co",
+  "PBX": "1234513",
+  "EXT": 207,
+  "PERSONAL_APOYO_Cedula": 1001002015
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec7"
+  },
+  "idFACULTAD": 8,
+  "SEDE_idSEDE": 4,
+  "Nombre": "Facultad de Odontología",
+  "Oficina": "Edif.U - Of. 107",
+  "CorreoAdministracion": "admin_facu.odont@unal.edu.co",
+  "PBX": "1234514",
+  "EXT": 208,
+  "PERSONAL_APOYO_Cedula": 1001002016
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec8"
+  },
+  "idFACULTAD": 9,
+  "SEDE_idSEDE": 1,
+  "Nombre": "Facultad de Medicina Veterinaria y de Zootecnia",
+  "Oficina": "Edif.U - Of. 108",
+  "CorreoAdministracion": "admin_facu.medVZ@unal.edu.co",
+  "PBX": "1234515",
+  "EXT": 209,
+  "PERSONAL_APOYO_Cedula": 1001002017
+},
+{
+  "_id": {
+    "$oid": "666e40f377b77cdbe2e75ec9"
+  },
+  "idFACULTAD": 10,
+  "SEDE_idSEDE": 2,
+  "Nombre": "Facultad de Derecho, Ciencias Políticas y Sociales",
+  "Oficina": "Edif.U - Of. 109",
+  "CorreoAdministracion": "admin_facu.Derecho@unal.edu.co",
+  "PBX": "1234516",
+  "EXT": 210,
+  "PERSONAL_APOYO_Cedula": 1001002018
+}]

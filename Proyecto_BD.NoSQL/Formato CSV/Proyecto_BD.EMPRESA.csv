@@ -1,0 +1,9 @@
+_id,NIT,Nombre,Descripcion,Campo,Telefono,Direccion,CorreoElectronico,PaginaWeb,REPRESENTANTE_EMPRESA_Cedula
+666e3c1677b77cdbe2e75e9e,900100100,IBM,Fabricación de productos electrónicos,Tecnología,3101002001,Calle 123 #45-67,contacto@IBM.com,www.IBM.com,1001001001
+666e3c1677b77cdbe2e75e9f,900100101,BanUnal,Servicios financieros y bancarios,Finanzas,3101002002,Carrera 7 #89-10,info@BanUnal.com,www.BanUnal.com,1001001002
+666e3c1677b77cdbe2e75ea0,900100102,Perez abogados,Consultoría y asesoría legal,Legal,3101002003,Avenida 15 #23-45,legal@Perezabogados.com,www.Perezabogados.com,1001001003
+666e3c1677b77cdbe2e75ea1,900100103,ingesoft,Desarrollo de software a medida,Tecnología,3101002004,Calle 45 #12-34,desarrollo@ingesoft.com,www.ingesoft.com,1001001004
+666e3c1677b77cdbe2e75ea2,900100104,Agroriente,Comercio de productos agrícolas,Agricultura,3101002005,Carrera 8 #56-78,ventas@Agroriente.com,www.Agroriente.com,1001001005
+666e3c1677b77cdbe2e75ea3,900100105,publiUnal,Marketing digital y publicidad,Marketing,3101002006,Avenida 9 #34-56,marketing@publiUnal.com,www.publiUnal.com,1001001006
+666e3c1677b77cdbe2e75ea4,900100106,Aeroexpress,Logística y distribución,Logística,3101002007,Calle 67 #89-12,logistica@Aeroexpress.com,www.Aeroexpress.com,1001001007
+666e3c1677b77cdbe2e75ea5,900100107,CryptoInversiones,Consultoría de negocios,Consultoría,3101002008,Carrera 10 #45-67,consultoria@CryptoInversiones.com,www.CryptoInversiones.com,1001001008

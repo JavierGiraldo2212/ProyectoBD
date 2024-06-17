@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "666e3cda77b77cdbe2e75ea6"
+  },
+  "Cedula": 1001001001,
+  "Nombres": "Carlos",
+  "PrimerApellido": "Rodríguez",
+  "SegundoApellido": "Martínez",
+  "Cargo": "Gerente General",
+  "Correo": "carlos.rodriguez@empresa.com",
+  "Telefono": {
+    "$numberLong": "3001002001"
+  }
+},
+{
+  "_id": {
+    "$oid": "666e3cda77b77cdbe2e75ea7"
+  },
+  "Cedula": 1001001002,
+  "Nombres": "María",
+  "PrimerApellido": "Gómez",
+  "SegundoApellido": "Pérez",
+  "Cargo": "Directora de Recursos Humanos",
+  "Correo": "maria.gomez@empresa.com",
+  "Telefono": {
+    "$numberLong": "3001002002"
+  }
+},
+{
+  "_id": {
+    "$oid": "666e3cda77b77cdbe2e75ea8"
+  },
+  "Cedula": 1001001003,
+  "Nombres": "Juan",
+  "PrimerApellido": "Fernández",
+  "SegundoApellido": "López",
+  "Cargo": "Jefe de Ventas",
+  "Correo": "juan.fernandez@empresa.com",
+  "Telefono": {
+    "$numberLong": "3001002003"
+  }
+},
+{
+  "_id": {
+    "$oid": "666e3cda77b77cdbe2e75ea9"
+  },
+  "Cedula": 1001001004,
+  "Nombres": "Ana",
+  "PrimerApellido": "Martín",
+  "SegundoApellido": "García",
+  "Cargo": "Coordinadora de Proyectos",
+  "Correo": "ana.martin@empresa.com",
+  "Telefono": {
+    "$numberLong": "3001002004"
+  }
+},
+{
+  "_id": {
+    "$oid": "666e3cda77b77cdbe2e75eaa"
+  },
+  "Cedula": 1001001005,
+  "Nombres": "Luis",
+  "PrimerApellido": "Sánchez",
+  "SegundoApellido": "Díaz",
+  "Cargo": "Analista Financiero",
+  "Correo": "luis.sanchez@empresa.com",
+  "Telefono": {
+    "$numberLong": "3001002005"
+  }
+},
+{
+  "_id": {
+    "$oid": "666e3cda77b77cdbe2e75eab"
+  },
+  "Cedula": 1001001006,
+  "Nombres": "Laura",
+  "PrimerApellido": "Jiménez",
+  "SegundoApellido": "Hernández",
+  "Cargo": "Gerente de Marketing",
+  "Correo": "laura.jimenez@empresa.com",
+  "Telefono": {
+    "$numberLong": "3001002006"
+  }
+},
+{
+  "_id": {
+    "$oid": "666e3cda77b77cdbe2e75eac"
+  },
+  "Cedula": 1001001007,
+  "Nombres": "Pedro",
+  "PrimerApellido": "Ruiz",
+  "SegundoApellido": "Torres",
+  "Cargo": "Director de Operaciones",
+  "Correo": "pedro.ruiz@empresa.com",
+  "Telefono": {
+    "$numberLong": "3001002007"
+  }
+},
+{
+  "_id": {
+    "$oid": "666e3cda77b77cdbe2e75ead"
+  },
+  "Cedula": 1001001008,
+  "Nombres": "Sofía",
+  "PrimerApellido": "Ramírez",
+  "SegundoApellido": "Flores",
+  "Cargo": "Consultora de Negocios",
+  "Correo": "sofia.ramirez@empresa.com",
+  "Telefono": {
+    "$numberLong": "3001002008"
+  }
+}]
