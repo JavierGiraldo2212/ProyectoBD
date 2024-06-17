@@ -22,7 +22,7 @@ DELIMITER ;
 SELECT * FROM EMPRESA WHERE empresa.Nit = 900100100;
 SELECT f_encontrar_NIT('laura.jimenez.E');
 
-CALL sp_cambiar_nombre_empresa( f_encontrar_NIT('laura.jimenez.E'), 'IBM LTDA');
+-- CALL sp_cambiar_nombre_empresa( f_encontrar_NIT('laura.jimenez.E'), 'IBM LTDA');
 
 -- -----------------------------------------------------
 -- PROCEDURE  sp_cambiar_descripcion_empresa

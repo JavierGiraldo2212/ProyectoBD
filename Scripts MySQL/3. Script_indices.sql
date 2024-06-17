@@ -2,7 +2,6 @@
 CREATE INDEX idx_rep_emp_cedula ON Proyecto_BD.REPRESENTANTE_EMPRESA (Cedula);
 CREATE INDEX idx_rep_emp_nombres ON Proyecto_BD.REPRESENTANTE_EMPRESA (Nombres);
 CREATE INDEX idx_rep_emp_apellidos ON Proyecto_BD.REPRESENTANTE_EMPRESA (PrimerApellido, SegundoApellido);
-SELECT*FROM idx_rep_emp_cedula;
 
 -- Índices para la tabla EMPRESA
 CREATE INDEX idx_empresa_nit ON Proyecto_BD.EMPRESA (NIT);

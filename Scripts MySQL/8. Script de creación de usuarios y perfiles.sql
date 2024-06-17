@@ -88,7 +88,7 @@ GRANT SELECT, INSERT, UPDATE ON oferta_laboral TO Empresa;
 ----------------------------------------------------
 GRANT EXECUTE ON PROCEDURE sp_ingresar_equipo TO 'Coordinador de Sede'@'localhost';
 GRANT EXECUTE ON PROCEDURE sp_salir_equipo TO 'Coordinador de Sede'@'localhost';
-GRANT EXECUTE ON FUNCTION f_promedio_edad_equipo TO 'Coordinador de Sede'@'localhost';
+GRANT EXECUTE ON FUNCTION f_promedio_edad_equipo TO Coordinador_de_Sede;
 GRANT EXECUTE ON FUNCTION f_Tiempo_experiencia TO 'Coordinador de Sede'@'localhost';
 GRANT EXECUTE ON FUNCTION f_Asistentes_catedra TO 'Coordinador de Sede'@'localhost';
 GRANT EXECUTE ON FUNCTION f_Asistentes_dialogos TO 'Coordinador de Sede'@'localhost';
