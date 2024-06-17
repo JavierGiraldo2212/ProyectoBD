@@ -2,8 +2,8 @@
 -- -----------------------------------------------------
 -- Schema Proyecto_BD
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS Proyecto_BD ;
-CREATE SCHEMA IF NOT EXISTS Proyecto_BD DEFAULT CHARACTER SET utf8 ;
+DROP DATABASE IF EXISTS Proyecto_BD ;
+CREATE DATABASE IF NOT EXISTS Proyecto_BD DEFAULT CHARACTER SET utf8 ;
 USE Proyecto_BD ;
 
 -- -----------------------------------------------------

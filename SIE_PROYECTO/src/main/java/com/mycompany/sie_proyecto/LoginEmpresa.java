@@ -127,7 +127,7 @@ public class LoginEmpresa extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Logic for login button
                 CardLayout cl = (CardLayout) cardPanel.getLayout();
-                if(userF.login(user.getText(),password.getText(),"rol_ejemplo")){
+                if(userF.login(user.getText(),password.getText(),"Empresa")){
                     user.setText("");
                     password.setText("");
                     cl.show(cardPanel, "mainEmpresa");

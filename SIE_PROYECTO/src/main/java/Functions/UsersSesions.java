@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * Author: Javier S
  */
 public class UsersSesions {
-    private static final String bd = "ejemplo";
+    private static final String bd = "Proyecto_BD";
     private static final String host = "localhost";
     private static final String server = "jdbc:mysql://" + host + "/" + bd
             + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -59,13 +59,14 @@ public class UsersSesions {
 
     private String getUserRoles(Connection connection, String username) {
         StringBuilder roles = new StringBuilder();
-        String patternString = "GRANT `([^`]+)`@`%` TO `[^`]+`@`localhost`";
+        String patternString = "GRANT\\s+((?:`[^`]+`@`[^`]+`,?\\s*)+)\\s+TO\\s+`[^`]+`@`localhost`";
         Pattern pattern = Pattern.compile(patternString);
 
         try (Statement stmt = connection.createStatement()) {
             String query = "SHOW GRANTS FOR '" + username + "'@'localhost'";
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
+                System.out.println(rs.getString(1));
                 String grant = rs.getString(1);
                 Matcher matcher = pattern.matcher(grant);
                 if (matcher.find()) {
