@@ -18,17 +18,15 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
 public class LoginEgresado extends JPanel {
 
-    UsersSesions userF = new UsersSesions();
     private JTextField user;
     private JPasswordField password;
 
-    public LoginEgresado(JPanel cardPanel) {
+    public LoginEgresado(JPanel cardPanel, UsersSesions userF) {
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -129,7 +127,13 @@ public class LoginEgresado extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Logic for login button
                 CardLayout cl = (CardLayout) cardPanel.getLayout();
-                if(userF.login(user.getText(),password.getText(),"rol_ejemplo")) cl.show(cardPanel, "mainPanel");
+                if(userF.login(user.getText(),password.getText(),"Egresado"))
+                {
+                    password.setText("");
+                    user.setText("");
+                    cl.show(cardPanel, "mainEgresado");
+                }
+                
             }
         });
 
