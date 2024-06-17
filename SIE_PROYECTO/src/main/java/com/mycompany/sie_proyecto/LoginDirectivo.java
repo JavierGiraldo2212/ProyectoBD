@@ -22,7 +22,7 @@ import javax.swing.border.EmptyBorder;
 
 public class LoginDirectivo extends JPanel {
 
-    // UsersSesions userF = new UsersSesions();
+    
     private JTextField user;
     private JPasswordField password;
 

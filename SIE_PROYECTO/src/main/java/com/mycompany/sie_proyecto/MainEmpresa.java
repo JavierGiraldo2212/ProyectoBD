@@ -64,6 +64,8 @@ public class MainEmpresa extends JPanel {
         btnDatEmp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // datos empresa
+                CardLayout cl = (CardLayout) cardPanel.getLayout();
+                cl.show(cardPanel, "datosEmpresa");
             }
         });
         btnDatEmp.setIcon(new ImageIcon(MainEmpresa.class.getResource("/images/Boton_datosEmpresa.png")));
@@ -73,6 +75,8 @@ public class MainEmpresa extends JPanel {
         btnOferta.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // ofertas laborales
+                CardLayout cl = (CardLayout) cardPanel.getLayout();
+                cl.show(cardPanel, "ofertaLaboral");
             }
         });
         btnOferta.setIcon(new ImageIcon(MainEmpresa.class.getResource("/images/Boton_ofertasLaborales.png")));
@@ -109,7 +113,7 @@ public class MainEmpresa extends JPanel {
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // INICIO
-
+                
             }
         });
         btnNewButton.setIcon(new ImageIcon(MainEmpresa.class.getResource("/images/BotonInicio.png")));

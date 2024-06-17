@@ -31,7 +31,7 @@ public class mainDirectivo extends JPanel {
 
         RegistroEgresados REg = new RegistroEgresados();
         REg.setLocation(0, 0);
-        // REg.setSize();
+        
         RegistroEmpresas REm = new RegistroEmpresas();
         REm.setLocation(0, 0);
 
