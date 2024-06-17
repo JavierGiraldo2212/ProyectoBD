@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
  * Author: Javier S
  */
 public class UsersSesions {
+    public String name = "";
     private static final String bd = "Proyecto_BD";
     private static final String host = "localhost";
     private static final String server = "jdbc:mysql://" + host + "/" + bd
@@ -23,6 +24,7 @@ public class UsersSesions {
     private Connection connection;
 
     public boolean login(String user, String password, String requiredRole) {
+        name = user;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(server, user, password);
@@ -87,6 +89,7 @@ public class UsersSesions {
     public boolean logout() {
         try {
             if (connection != null && !connection.isClosed()) {
+                System.out.println(this.name);
                 connection.close();
                 System.out.println("Conexión cerrada.");
                 return true;
