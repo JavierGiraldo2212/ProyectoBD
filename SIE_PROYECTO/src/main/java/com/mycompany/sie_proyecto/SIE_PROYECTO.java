@@ -22,13 +22,18 @@ public class SIE_PROYECTO {
 
         // Create the login panel for "Egresados" and "Empresa"
         LoginEgresado loginEgresado = new LoginEgresado(cardPanel);
-        LoginEmpresa loginEmpresa = new LoginEmpresa(cardPanel);
         
+        
+        
+        // Create the login panel for "Empresa" and its mainPanel
+        LoginEmpresa loginEmpresa = new LoginEmpresa(cardPanel, userF);
+        MainEmpresa mainEmpresa = new MainEmpresa(cardPanel, userF);
+        UseEmpresa useEmpresa = new UseEmpresa(cardPanel, userF);
+        EmpresaOferta empresaOferta = new EmpresaOferta(cardPanel, userF);
+
         // Create the login panel for "Directivo" and its mainPanel
         LoginDirectivo loginDirectivo = new LoginDirectivo(cardPanel, userF);
         mainDirectivo maindirectivo = new mainDirectivo(cardPanel, userF);
-        
-        
         
         
         // Add all panels to card panel
@@ -37,6 +42,9 @@ public class SIE_PROYECTO {
         cardPanel.add(loginEmpresa, "loginEmpresa");
         cardPanel.add(loginDirectivo, "loginDirectivo");
         cardPanel.add(maindirectivo,"mainDirectivo");
+        cardPanel.add(mainEmpresa,"mainEmpresa");
+        cardPanel.add(useEmpresa, "datosEmpresa");
+        cardPanel.add(empresaOferta, "ofertaLaboral");
 
         // Add card panel to frame
         frame.add(cardPanel);

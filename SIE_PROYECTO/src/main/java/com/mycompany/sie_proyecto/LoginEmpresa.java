@@ -26,7 +26,7 @@ public class LoginEmpresa extends JPanel {
     private JTextField user;
     private JPasswordField password;
 
-    public LoginEmpresa(JPanel cardPanel) {
+    public LoginEmpresa(JPanel cardPanel, UsersSesions userF) {
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -127,7 +127,11 @@ public class LoginEmpresa extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Logic for login button
                 CardLayout cl = (CardLayout) cardPanel.getLayout();
-                if(userF.login(user.getText(),password.getText(),"rol_ejemplo1")) cl.show(cardPanel, "mainPanel"); 
+                if(userF.login(user.getText(),password.getText(),"rol_ejemplo")){
+                    user.setText("");
+                    password.setText("");
+                    cl.show(cardPanel, "mainEmpresa");
+                } 
             }
         });
 
