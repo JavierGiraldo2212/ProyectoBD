@@ -127,7 +127,12 @@ public class LoginDirectivo extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Logic for login button
                 CardLayout cl = (CardLayout) cardPanel.getLayout();
-                if(userF.login(user.getText(),password.getText(),"rol_ejemplo")) cl.show(cardPanel, "mainDirectivo");
+                if(userF.login(user.getText(),password.getText(),"Personal_de_Apoyo")) {
+                    password.setText("");
+                    user.setText("");
+                    cl.show(cardPanel, "mainDirectivo");
+                }
+                
             }
         });
 

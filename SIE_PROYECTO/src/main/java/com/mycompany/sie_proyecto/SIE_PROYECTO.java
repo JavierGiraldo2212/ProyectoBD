@@ -21,8 +21,8 @@ public class SIE_PROYECTO {
         MainPanel mainPanel = new MainPanel(cardPanel);
 
         // Create the login panel for "Egresados" and "Empresa"
-        LoginEgresado loginEgresado = new LoginEgresado(cardPanel);
-        
+        LoginEgresado loginEgresado = new LoginEgresado(cardPanel,userF);
+        MainEgresados mainEgresados = new MainEgresados(cardPanel, userF);
         
         
         // Create the login panel for "Empresa" and its mainPanel
@@ -38,14 +38,18 @@ public class SIE_PROYECTO {
         
         // Add all panels to card panel
         cardPanel.add(mainPanel, "mainPanel");
+
         cardPanel.add(loginEgresado, "loginEgresado");
+        cardPanel.add(mainEgresados, "mainEgresado");
+
         cardPanel.add(loginEmpresa, "loginEmpresa");
-        cardPanel.add(loginDirectivo, "loginDirectivo");
-        cardPanel.add(maindirectivo,"mainDirectivo");
-        cardPanel.add(mainEmpresa,"mainEmpresa");
+        cardPanel.add(mainEmpresa, "mainEmpresa");
         cardPanel.add(useEmpresa, "datosEmpresa");
         cardPanel.add(empresaOferta, "ofertaLaboral");
 
+        cardPanel.add(loginDirectivo, "loginDirectivo");
+        cardPanel.add(maindirectivo,"mainDirectivo");
+        
         // Add card panel to frame
         frame.add(cardPanel);
 

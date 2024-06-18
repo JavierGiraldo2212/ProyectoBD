@@ -1,5 +1,5 @@
 USE Proyecto_BD;
-
+SET SQL_SAFE_UPDATES = 0;
 -- -----------------------------------------------------
 -- Creación del historial para egresado
 -- -----------------------------------------------------
