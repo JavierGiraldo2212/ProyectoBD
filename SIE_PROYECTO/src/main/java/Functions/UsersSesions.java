@@ -103,7 +103,12 @@ public class UsersSesions {
         }
         return false;
     }
-
+    public Connection getConnection() {
+        if (this.connection == null) {
+            System.err.println("Conexión no establecida. Devuelve null.");
+        }
+        return this.connection;
+    }
     // Método EGRESADO: OFERTAS LABORALES
     public void Vista_OfertasLaborales(DefaultTableModel model) {
         Connection conn = null;

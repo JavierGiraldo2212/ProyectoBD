@@ -63,7 +63,8 @@ public class OfertaActualizar extends JPanel {
         btnUpdateOffer.setIcon(new ImageIcon(OfertaCrear.class.getResource("/images/Update.png")));
         btnUpdateOffer.setBackground(Color.WHITE);
 
-        JLabel lblNoferta = new JLabel("No Oferta:");
+        JLabel lblNoferta = new JLabel("No Oferta:\\n" + //
+                                "(obligatorio)");
         lblNoferta.setFont(new Font("Arial Black", Font.PLAIN, 17));
 
         textNoOferta = new JTextField();
