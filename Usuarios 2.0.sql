@@ -108,7 +108,7 @@ GRANT EXECUTE ON PROCEDURE sp_cambiar_Area_oferta_laboral TO Empresa;
 GRANT EXECUTE ON PROCEDURE sp_cambiar_TipoContrato_oferta_laboral TO Empresa;
 GRANT EXECUTE ON PROCEDURE sp_ver_oferta_laboral_unica TO Empresa;
 
-GRANT EXECUTE ON PROCEDURE f_encontrar_Cedula TO egresado;
+GRANT EXECUTE ON FUNCTION f_encontrar_Cedula TO egresado;
 GRANT EXECUTE ON PROCEDURE sp_ver_experiencia_laboral TO egresado;
 GRANT EXECUTE ON PROCEDURE sp_ver_experiencia_laboral_unica TO egresado;
 GRANT EXECUTE ON PROCEDURE sp_crear_experiencia_laboral TO egresado;

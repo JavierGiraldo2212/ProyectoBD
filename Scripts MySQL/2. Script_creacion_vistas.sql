@@ -173,7 +173,7 @@ FROM oferta_laboral JOIN empresa ON EMPRESA_NIT = NIT
 JOIN representante_empresa ON REPRESENTANTE_EMPRESA_Cedula = representante_empresa.Cedula;
 
 SELECT * FROM vw_ofertas_laborales;
-
+SELECT * FROM OFERTA_LABORAL;
 -- -----------------------------------------------------
 -- VIEW vw_lista_egresados_Ingenieria
 -- Lista de Egresados de la facultad de Ingenieria
