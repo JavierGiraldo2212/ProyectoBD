@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -13,21 +15,13 @@ import javax.swing.table.DefaultTableModel;
 
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
 
-/**
- * Class to handle user sessions.
- * 
- * Author: Javier S
- */
-
-
- 
 public class UsersSesions {
     public String name = "";
     private static final String bd = "Proyecto_BD";
     private static final String host = "localhost";
     private static final String server = "jdbc:mysql://" + host + "/" + bd
             + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    
+
     public Connection connection;
 
     public boolean login(String user, String password, String requiredRole) {
@@ -110,22 +104,133 @@ public class UsersSesions {
         return false;
     }
 
-    //MÉTODO EGRESADO
-    //OFERTAS LABORALES
-    public void Vista_OfertasLaborales(){
-        String sql = "SELECT * FROM vw_ofertas_laborales;";
-        try (Statement s = this.connection.createStatement();
-                ResultSet rs = s.executeQuery(sql)) {
+    // Método EGRESADO: OFERTAS LABORALES
+    public void Vista_OfertasLaborales(DefaultTableModel model) {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = this.connection; // Obtener la conexión establecida
+
+            stmt = conn.createStatement(); // Crear una declaración
+
+            String sql = "SELECT * FROM vw_ofertas_laborales"; // Consulta SQL
+            rs = stmt.executeQuery(sql); // Ejecutar la consulta
+
+            // Limpiar el modelo de la tabla antes de agregar nuevas filas
+            model.setRowCount(0);
+
+            // Procesar los resultados y añadir filas al modelo de la tabla
             while (rs.next()) {
-                System.out.println(
-                        "ID: " + rs.getInt(1) +
-                                "\tEmpresa: " + rs.getString("Empresa") +
-                                "\tSexo: " + rs.getString("sexo"));
+                int noOferta = rs.getInt("No Oferta");
+                String empresa = rs.getString("Empresa");
+                String estado = rs.getString("Estado");
+                double salario = rs.getDouble("Salario");
+                String experienciaRequerida = rs.getString("Experiencia requerida");
+                String area = rs.getString("Area");
+                String tipoContrato = rs.getString("Tipo contrato");
+                String telefonoContacto = rs.getString("Telefono contacto");
+                String correo = rs.getString("Correo");
+                String correoResponsable = rs.getString("Correo responsable");
+
+                Object[] row = { noOferta, empresa, estado, salario, experienciaRequerida, area, tipoContrato,
+                        telefonoContacto, correo, correoResponsable };
+
+                model.addRow(row); // Agregar cada fila al modelo de la tabla
             }
-        } catch (SQLException ex) {
-            System.out.println("Imposible realizar consulta ... FAIL");
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejar excepciones SQL
+        } finally {
+            // Cerrar los recursos
+            try {
+                if (rs != null)
+                    rs.close();
+                if (stmt != null)
+                    stmt.close();
+                // No cerrar la conexión aquí, para poder reutilizarla
+            } catch (SQLException e) {
+                e.printStackTrace(); // Manejar excepciones al cerrar recursos
+            }
+        }
+    }
+
+    // En UsersSesions.java, modificar el método Vista_OfertasLaborales para soportar filtrado múltiple
+public void Vista_OfertasLaboralesFiltrado(DefaultTableModel model, String filtroEmpresa, String filtroEstado, String filtroArea) {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+
+    try {
+        conn = this.connection; // Obtener la conexión establecida
+        
+        // Consulta SQL base
+        String sql = "SELECT * FROM vw_ofertas_laborales WHERE 1=1";
+
+        // Lista para almacenar los parámetros de filtro
+        List<Object> params = new ArrayList<>();
+
+        // Construir consulta dinámica con filtros
+        if (!filtroEmpresa.isEmpty()) {
+            sql += " AND Empresa LIKE ?";
+            params.add("%" + filtroEmpresa + "%");
+        }
+        if (!filtroEstado.isEmpty()) {
+            sql += " AND Estado LIKE ?";
+            params.add("%" + filtroEstado + "%");
+        }
+        if (!filtroArea.isEmpty()) {
+            sql += " AND Area LIKE ?";
+            params.add("%" + filtroArea + "%");
+        }
+
+        // Preparar la declaración con la consulta final
+        stmt = conn.prepareStatement(sql);
+
+        // Asignar parámetros a la declaración preparada
+        for (int i = 0; i < params.size(); i++) {
+            stmt.setObject(i + 1, params.get(i));
+        }
+
+        rs = stmt.executeQuery(); // Ejecutar la consulta
+
+        // Limpiar el modelo de la tabla antes de agregar nuevas filas
+        model.setRowCount(0);
+
+        // Procesar los resultados y añadir filas al modelo de la tabla
+        while (rs.next()) {
+            int noOferta = rs.getInt("No Oferta");
+            String empresa = rs.getString("Empresa");
+            String estado = rs.getString("Estado");
+            double salario = rs.getDouble("Salario");
+            String experienciaRequerida = rs.getString("Experiencia requerida");
+            String area = rs.getString("Area");
+            String tipoContrato = rs.getString("Tipo contrato");
+            String telefonoContacto = rs.getString("Telefono contacto");
+            String correo = rs.getString("Correo");
+            String correoResponsable = rs.getString("Correo responsable");
+
+            Object[] row = { noOferta, empresa, estado, salario, experienciaRequerida, area, tipoContrato,
+                    telefonoContacto, correo, correoResponsable };
+
+            model.addRow(row); // Agregar cada fila al modelo de la tabla
+        }
+    } catch (SQLException e) {
+        e.printStackTrace(); // Manejar excepciones SQL
+    } finally {
+        // Cerrar los recursos
+        try {
+            if (rs != null)
+                rs.close();
+            if (stmt != null)
+                stmt.close();
+            // No cerrar la conexión aquí, para poder reutilizarla
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejar excepciones al cerrar recursos
         }
     }
 }
 
 
+}
