@@ -9,27 +9,26 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
-/**
- * Class to handle user sessions.
- * 
- * Author: Javier S
- */
 public class UsersSesions {
     public String name = "";
+   
     private static final String bd = "Proyecto_BD";
     private static final String host = "localhost";
     private static final String server = "jdbc:mysql://" + host + "/" + bd
             + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    
+
     private Connection connection;
+
+
 
     public boolean login(String user, String password, String requiredRole) {
         name = user;
+    
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(server, user, password);
             System.out.println("Conexión a base de datos " + bd + " ... OK");
-
+    
             String roles = getUserRoles(connection, user);
             if (roles != null && !roles.isEmpty()) {
                 System.out.println("Los roles del usuario " + user + " son: " + roles);
@@ -55,8 +54,14 @@ public class UsersSesions {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Imposible realizar conexión con " + bd, "Error",
                     JOptionPane.ERROR_MESSAGE);
-            return false;
+            return false;}
         }
+
+    public Connection getConnection() {
+        if (this.connection == null) {
+            System.err.println("Conexión no establecida. Devuelve null.");
+        }
+        return this.connection;
     }
 
     private String getUserRoles(Connection connection, String username) {
@@ -101,5 +106,4 @@ public class UsersSesions {
         }
         return false;
     }
-
 }

@@ -1,5 +1,6 @@
 package com.mycompany.sie_proyecto;
 
+
 import Functions.UsersSesions;
 import javax.swing.*;
 import java.awt.*;
@@ -7,6 +8,7 @@ import java.awt.*;
 public class SIE_PROYECTO {
     public static void main(String[] args) {
         // Create the frame
+        
         UsersSesions userF = new UsersSesions();
         JFrame frame = new JFrame("Sistema de Información de Egresados");
         

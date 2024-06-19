@@ -7,17 +7,31 @@ import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
+
+import Functions.UsersSesions;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+
+import Functions.UsersSesions;
+
 
 public class OfertaCrear extends JPanel {
+
+
+        private UsersSesions userF;
 
     /**
      * Create the panel.
      */
-    public OfertaCrear() {
+    public OfertaCrear(UsersSesions userSession) {
+        this.userF = userSession; // Asignar la conexión pasada
+  
         setBackground(Color.WHITE);
 
         JPanel panelAux = new JPanel();
@@ -58,6 +72,45 @@ public class OfertaCrear extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // CREAR OFERTA
                 System.out.println("CREANDO OFERTA");
+          
+
+                // Obtener los valores de los campos de texto
+                String NIT = userF.name;
+                String estado = txtEstado.getText();
+                String salario = txtSalario.getText();
+                String expRequerida = txtExpRequerida.getText();
+                String area = txtArea.getText();
+                String tipoContrato = txtTipoContrato.getText();
+
+                CallableStatement callableStatement = null;
+
+                try {
+                    // Preparar la llamada al procedimiento almacenado
+                    String sql = "{CALL sp_ingresar_oferta(f_encontrar_NIT(?), ?, ?, ?, ?, ?)}";
+                    callableStatement = userF.getConnection().prepareCall(sql);
+
+                    // Establecer los parámetros del procedimiento
+                    callableStatement.setString(1, NIT); // Reemplaza con el valor real de EMPRESA_NIT
+                    callableStatement.setString(2, estado);
+                    callableStatement.setInt(3, Integer.parseInt(salario));
+                    callableStatement.setInt(4, Integer.parseInt(expRequerida));
+                    callableStatement.setString(5, area);
+                    callableStatement.setString(6, tipoContrato);
+
+                    // Ejecutar el procedimiento almacenado
+                    callableStatement.execute();
+
+                    System.out.println("Oferta creada exitosamente.");
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                } finally {
+                    // Cerrar CallableStatement
+                    try {
+                        if (callableStatement != null) callableStatement.close();
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                }
             }
         });
         btnCreateOffer.setIcon(new ImageIcon(OfertaCrear.class.getResource("/images/CREATE.png")));

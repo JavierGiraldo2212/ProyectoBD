@@ -22,12 +22,12 @@ import javax.swing.border.EmptyBorder;
 
 public class LoginEmpresa extends JPanel {
 
-    UsersSesions userF = new UsersSesions();
+    private UsersSesions userF; 
     private JTextField user;
     private JPasswordField password;
 
-    public LoginEmpresa(JPanel cardPanel, UsersSesions userF) {
-        setBackground(Color.WHITE);
+    public LoginEmpresa(JPanel cardPanel, UsersSesions userSession) {
+        this.userF = userSession; 
         setBorder(new EmptyBorder(5, 5, 5, 5));
 
         JPanel titlePanel = new JPanel();
