@@ -11,7 +11,13 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.sql.CallableStatement;
+
 import javax.swing.SwingConstants;
+
+import Functions.UsersSesions;
+
 import javax.swing.ImageIcon;
 import javax.swing.JPasswordField;
 
@@ -33,8 +39,10 @@ public class RegistroEmpresas extends JPanel {
     private JTextField paginaWebField;
     private JTextField userField;
     private JPasswordField passwordField;
+    private UsersSesions userF;
 
-    public RegistroEmpresas() {
+    public RegistroEmpresas(UsersSesions userSession) {
+        this.userF = userSession;
         setBackground(Color.WHITE);
 
         JPanel panelIzq = new JPanel();
@@ -324,10 +332,101 @@ public class RegistroEmpresas extends JPanel {
 
         JButton btnRegEm = new JButton("");
         btnRegEm.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
+                public void actionPerformed(ActionEvent e) {
+                        // CREAR REPRESENTANTE Y EMPRESA
+                        System.out.println("CREANDO REPRESENTANTE Y EMPRESA");
+                
+                        // Obtener los valores de los campos de texto para el representante
+                        String cedula = cedulaField.getText();
+                        String nombres = nombresField.getText();
+                        String primerApellido = primerApellidoField.getText();
+                        String segundoApellido = segundoApellidoField.getText();
+                        String cargo = cargoField.getText();
+                        String correo = correoField.getText();
+                        String telefono = telefonoField.getText();
+                
+                        // Obtener los valores de los campos de texto para la empresa
+                        String nit = nitField.getText();
+                        String nombre = nombresField.getText();
+                        String descripcion = descripcionField.getText();
+                        String campo = campoField.getText();
+                        String telefonoEmpresa = telefonoEmpresaField.getText();
+                        String direccion = direccionField.getText();
+                        String correoElectronico = correoElectronicoField.getText();
+                        String paginaWeb = paginaWebField.getText();
+                
+                        // Obtener los valores de los campos de texto para el usuario de la empresa
+                        String usuario = userField.getText();
+                        String contrasena = new String(passwordField.getPassword());
+                
+                        CallableStatement callableStatement = null;
+                        CallableStatement callableStatement2 = null;
+                
+                        try {
+                            // Preparar la llamada al procedimiento almacenado para crear representante
+                            String sqlRepresentante = "{CALL sp_crear_representante_empresa(?, ?, ?, ?, ?, ?, ?)}";
+                            callableStatement = userF.getConnection().prepareCall(sqlRepresentante);
+                
+                            // Establecer los parámetros del procedimiento para crear representante
+                            callableStatement.setInt(1, Integer.parseInt(cedula));
+                            callableStatement.setString(2, nombres);
+                            callableStatement.setString(3, primerApellido);
+                            callableStatement.setString(4, segundoApellido);
+                            callableStatement.setString(5, cargo);
+                            callableStatement.setString(6, correo);
+                            callableStatement.setString(7, telefono);
+                
+                            // Ejecutar el procedimiento almacenado para crear representante
+                            callableStatement.execute();
+                            callableStatement.close();
+                
+                            System.out.println("Representante creado exitosamente.");
+                
+                            // Preparar la llamada al procedimiento almacenado para crear empresa
+                            String sqlEmpresa = "{CALL sp_crear_empresa(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+                            callableStatement = userF.getConnection().prepareCall(sqlEmpresa);
+                
+                            // Establecer los parámetros del procedimiento para crear empresa
+                            callableStatement.setInt(1, Integer.parseInt(nit));
+                            callableStatement.setString(2, nombre);
+                            callableStatement.setString(3, descripcion);
+                            callableStatement.setString(4, campo);
+                            callableStatement.setString(5, telefonoEmpresa);
+                            callableStatement.setString(6, direccion);
+                            callableStatement.setString(7, correoElectronico);
+                            callableStatement.setString(8, paginaWeb);
+                            callableStatement.setInt(9, Integer.parseInt(cedula));
+                
+                            // Ejecutar el procedimiento almacenado para crear empresa
+                            callableStatement.execute();
+                
+                            System.out.println("Empresa creada exitosamente.");
+                
+                            // Preparar la llamada al procedimiento almacenado para generar usuario empresa
+                            String sqlUsuarioEmpresa = "{CALL sp_generar_usuario_empresa(?, ?)}";
+                            callableStatement2 = userF.getConnection().prepareCall(sqlUsuarioEmpresa);
+                
+                            // Establecer los parámetros del procedimiento para generar usuario empresa
+                            callableStatement2.setString(1, usuario);
+                            callableStatement2.setString(2, contrasena);
+                
+                            // Ejecutar el procedimiento almacenado para generar usuario empresa
+                            callableStatement2.execute();
+                
+                            System.out.println("Usuario empresa creado exitosamente.");
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        } finally {
+                            // Cerrar CallableStatements
+                            try {
+                                if (callableStatement != null) callableStatement.close();
+                                if (callableStatement2 != null) callableStatement2.close();
+                            } catch (SQLException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+                });
         btnRegEm.setIcon(new ImageIcon(RegistroEmpresas.class.getResource("/images/BotonRegEm.png")));
 
         JLabel lblUsuario = new JLabel("Usuario:");
