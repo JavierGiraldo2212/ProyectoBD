@@ -2,18 +2,25 @@ package Functions;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+import com.mysql.cj.jdbc.result.ResultSetMetaData;
 
 /**
  * Class to handle user sessions.
  * 
  * Author: Javier S
  */
+
+
+ 
 public class UsersSesions {
     public String name = "";
     private static final String bd = "Proyecto_BD";
@@ -21,7 +28,7 @@ public class UsersSesions {
     private static final String server = "jdbc:mysql://" + host + "/" + bd
             + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     
-    private Connection connection;
+    public Connection connection;
 
     public boolean login(String user, String password, String requiredRole) {
         name = user;
@@ -92,6 +99,7 @@ public class UsersSesions {
                 System.out.println(this.name);
                 connection.close();
                 System.out.println("Conexión cerrada.");
+                name = "";
                 return true;
             }
         } catch (SQLException ex) {
@@ -102,4 +110,22 @@ public class UsersSesions {
         return false;
     }
 
+    //MÉTODO EGRESADO
+    //OFERTAS LABORALES
+    public void Vista_OfertasLaborales(){
+        String sql = "SELECT * FROM vw_ofertas_laborales;";
+        try (Statement s = this.connection.createStatement();
+                ResultSet rs = s.executeQuery(sql)) {
+            while (rs.next()) {
+                System.out.println(
+                        "ID: " + rs.getInt(1) +
+                                "\tEmpresa: " + rs.getString("Empresa") +
+                                "\tSexo: " + rs.getString("sexo"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("Imposible realizar consulta ... FAIL");
+        }
+    }
 }
+
+
