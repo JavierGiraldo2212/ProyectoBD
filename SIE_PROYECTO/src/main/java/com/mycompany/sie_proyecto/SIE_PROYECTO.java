@@ -9,6 +9,7 @@ public class SIE_PROYECTO {
         // Create the frame
         UsersSesions userF = new UsersSesions();
         JFrame frame = new JFrame("Sistema de Información de Egresados");
+        frame.setSize(1280,720);
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1280, 720);
@@ -20,10 +21,11 @@ public class SIE_PROYECTO {
         // Create the main panel with buttons
         MainPanel mainPanel = new MainPanel(cardPanel);
 
-        // Create the login panel for "Egresados" and "Empresa"
+        // Create the login panel for "Egresados" and its mainPanel
         LoginEgresado loginEgresado = new LoginEgresado(cardPanel,userF);
         MainEgresados mainEgresados = new MainEgresados(cardPanel, userF);
-        
+        EgresadosDatos egresadosDatos = new EgresadosDatos(cardPanel, userF);
+        ofertasEgresados ofertas_egresados = new ofertasEgresados(cardPanel, userF);
         
         // Create the login panel for "Empresa" and its mainPanel
         LoginEmpresa loginEmpresa = new LoginEmpresa(cardPanel, userF);
@@ -41,6 +43,8 @@ public class SIE_PROYECTO {
 
         cardPanel.add(loginEgresado, "loginEgresado");
         cardPanel.add(mainEgresados, "mainEgresado");
+        cardPanel.add(egresadosDatos,"egresadosDatos");
+        cardPanel.add(ofertas_egresados, "egresadosOferta");
 
         cardPanel.add(loginEmpresa, "loginEmpresa");
         cardPanel.add(mainEmpresa, "mainEmpresa");
