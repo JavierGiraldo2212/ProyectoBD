@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package com.mycompany.sie_proyecto;
 
 import javax.swing.JPanel;
@@ -166,56 +163,147 @@ public class ofertasEgresados extends JPanel {
                 textEmpresa = new JTextField();
                 textEmpresa.setColumns(10);
 
+                
+
                 textArea = new JTextField();
                 textArea.setColumns(10);
+                JButton btnSollicitud = new JButton("");
+                btnSollicitud.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                                // ACCIÓN SOLICITAR
+                                int selectedRow = table.getSelectedRow();
+
+                                if (selectedRow != -1) {
+                                        // Obtener el valor de la primera columna (índice 0) de la fila seleccionada
+                                        Object firstColumnValue = table.getValueAt(selectedRow, 0);
+
+                                        // Imprimir el valor de la primera columna
+                                        userF.aplicarOfertaLaboral((int) firstColumnValue);
+
+                                        System.out.println("Valor de la primera columna: " + firstColumnValue);
+
+                                } else {
+                                        System.out.println("No se ha seleccionado ninguna fila.");
+                                }
+                        }
+                });
+                btnSollicitud.setIcon(
+                                new ImageIcon(UseEmpresa.class.getResource("/images/Egresados/BotonPostular.png")));
+                btnSollicitud.setBackground(Color.WHITE);
+
                 GroupLayout gl_panelBuscador = new GroupLayout(panelBuscador);
-                panelBuscador.setLayout(gl_panelBuscador);
+                panelBuscador.setBackground(Color.WHITE);
                 gl_panelBuscador.setHorizontalGroup(
-        	gl_panelBuscador.createParallelGroup(Alignment.LEADING)
-        		.addGroup(gl_panelBuscador.createSequentialGroup()
-        			.addGap(34)
-        			.addGroup(gl_panelBuscador.createParallelGroup(Alignment.LEADING)
-        				.addGroup(gl_panelBuscador.createSequentialGroup()
-        					.addComponent(lblFiltroArea, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
-        					.addGap(10)
-        					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(gl_panelBuscador.createSequentialGroup()
-        					.addGroup(gl_panelBuscador.createParallelGroup(Alignment.LEADING)
-        						.addComponent(lblEmpresaFiltro)
-        						.addComponent(lblFiltroEstado))
-        					.addGap(10)
-        					.addGroup(gl_panelBuscador.createParallelGroup(Alignment.TRAILING)
-        						.addComponent(choiceEstado, 0, 0, Short.MAX_VALUE)
-        						.addComponent(textEmpresa, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE))
-        					.addPreferredGap(ComponentPlacement.RELATED, 437, Short.MAX_VALUE)
-        					.addComponent(btnBusqueda, GroupLayout.PREFERRED_SIZE, 107, GroupLayout.PREFERRED_SIZE))))
-        );
-        gl_panelBuscador.setVerticalGroup(
-        	gl_panelBuscador.createParallelGroup(Alignment.LEADING)
-        		.addGroup(gl_panelBuscador.createSequentialGroup()
-        			.addGap(11)
-        			.addGroup(gl_panelBuscador.createParallelGroup(Alignment.LEADING)
-        				.addGroup(gl_panelBuscador.createSequentialGroup()
-        					.addGap(17)
-        					.addComponent(lblEmpresaFiltro))
-        				.addGroup(gl_panelBuscador.createSequentialGroup()
-        					.addGap(17)
-        					.addComponent(textEmpresa, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-        				.addComponent(btnBusqueda, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE))
-        			.addGroup(gl_panelBuscador.createParallelGroup(Alignment.LEADING)
-        				.addGroup(gl_panelBuscador.createSequentialGroup()
-        					.addGap(25)
-        					.addComponent(lblFiltroEstado))
-        				.addGroup(gl_panelBuscador.createSequentialGroup()
-        					.addGap(4)
-        					.addComponent(choiceEstado, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)))
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addGroup(gl_panelBuscador.createParallelGroup(Alignment.LEADING)
-        				.addComponent(lblFiltroArea)
-        				.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(24, Short.MAX_VALUE))
-        );
-        panelBuscador.setLayout(gl_panelBuscador);
+                                gl_panelBuscador.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(gl_panelBuscador.createSequentialGroup()
+                                                                .addGap(34)
+                                                                .addGroup(gl_panelBuscador
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addGroup(gl_panelBuscador
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(lblFiltroArea,
+                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                209,
+                                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                                .addGap(10)
+                                                                                                .addComponent(textArea,
+                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                222,
+                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                .addGroup(gl_panelBuscador
+                                                                                                .createSequentialGroup()
+                                                                                                .addGroup(gl_panelBuscador
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.LEADING)
+                                                                                                                .addComponent(lblEmpresaFiltro)
+                                                                                                                .addComponent(lblFiltroEstado))
+                                                                                                .addGap(10)
+                                                                                                .addGroup(gl_panelBuscador
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.TRAILING)
+                                                                                                                .addComponent(choiceEstado,
+                                                                                                                                0,
+                                                                                                                                0,
+                                                                                                                                Short.MAX_VALUE)
+                                                                                                                .addComponent(textEmpresa,
+                                                                                                                                Alignment.LEADING,
+                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                222,
+                                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                                .addPreferredGap(
+                                                                                                                ComponentPlacement.RELATED,
+                                                                                                                437,
+                                                                                                                Short.MAX_VALUE)
+                                                                                                .addGroup(gl_panelBuscador
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.TRAILING)
+                                                                                                                .addComponent(btnBusqueda,
+                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                107,
+                                                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                                                .addComponent(btnSollicitud,
+                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                107,
+                                                                                                                                GroupLayout.PREFERRED_SIZE))))));
+                gl_panelBuscador.setVerticalGroup(
+                                gl_panelBuscador.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(gl_panelBuscador.createSequentialGroup()
+                                                                .addGap(11)
+                                                                .addGroup(gl_panelBuscador
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addGroup(gl_panelBuscador
+                                                                                                .createSequentialGroup()
+                                                                                                .addGap(17)
+                                                                                                .addComponent(lblEmpresaFiltro))
+                                                                                .addGroup(gl_panelBuscador
+                                                                                                .createSequentialGroup()
+                                                                                                .addGap(17)
+                                                                                                .addComponent(textEmpresa,
+                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                25,
+                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(btnBusqueda,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                53,
+                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(gl_panelBuscador
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addGroup(gl_panelBuscador
+                                                                                                .createSequentialGroup()
+                                                                                                .addGroup(gl_panelBuscador
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.LEADING)
+                                                                                                                .addGroup(gl_panelBuscador
+                                                                                                                                .createSequentialGroup()
+                                                                                                                                .addGap(25)
+                                                                                                                                .addComponent(lblFiltroEstado))
+                                                                                                                .addGroup(gl_panelBuscador
+                                                                                                                                .createSequentialGroup()
+                                                                                                                                .addGap(4)
+                                                                                                                                .addComponent(choiceEstado,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                74,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE)))
+                                                                                                .addPreferredGap(
+                                                                                                                ComponentPlacement.UNRELATED)
+                                                                                                .addGroup(gl_panelBuscador
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.LEADING)
+                                                                                                                .addComponent(lblFiltroArea)
+                                                                                                                .addComponent(textArea,
+                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                25,
+                                                                                                                                GroupLayout.PREFERRED_SIZE)))
+                                                                                .addGroup(gl_panelBuscador
+                                                                                                .createSequentialGroup()
+                                                                                                .addPreferredGap(
+                                                                                                                ComponentPlacement.RELATED)
+                                                                                                .addComponent(btnSollicitud,
+                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                61,
+                                                                                                                GroupLayout.PREFERRED_SIZE)))
+                                                                .addContainerGap(26, Short.MAX_VALUE)));
+                panelBuscador.setLayout(gl_panelBuscador);
 
                 JLabel LogoEgresados = new JLabel("");
                 LogoEgresados.setIcon(

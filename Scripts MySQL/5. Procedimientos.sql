@@ -709,3 +709,45 @@ DELIMITER ;
 SELECT * FROM egresado WHERE egresado.cedula = 1001003011;
 CALL sp_ver_persona_de_apoyo(1001003011);
 
+
+-- -----------------------------------------------------
+-- PROCEDURE  AplicarOfertaLaboral
+-- Procedimiento para ver el personal de apoyo asignado a un egresado
+-- -----------------------------------------------------
+DROP PROCEDURE IF EXISTS AplicarOfertaLaboral ;
+DELIMITER //
+
+CREATE PROCEDURE Proyecto_BD.AplicarOfertaLaboral (
+    IN p_correo_electronico VARCHAR(50),
+    IN p_oferta_laboral_no INT
+)
+BEGIN
+    DECLARE v_egresado_cedula BIGINT;
+    DECLARE v_count INT;
+
+    -- Encontrar la cédula del egresado usando la función
+    SET v_egresado_cedula = f_encontrar_Cedula(p_correo_electronico);
+
+    -- Verificar si el egresado ya ha aplicado a esta oferta laboral
+    SELECT COUNT(*)
+    INTO v_count
+    FROM Proyecto_BD.EGRESADO_APLICA_OFERTA_LABORAL
+    WHERE EGRESADO_Cedula = v_egresado_cedula
+    AND OFERTA_LABORAL_No_oferta = p_oferta_laboral_no;
+
+    -- Si ya ha aplicado, no hacer nada
+    IF v_count > 0 THEN
+        SELECT 'El egresado ya ha aplicado a esta oferta laboral.';
+    ELSE
+        -- Insertar el registro en la tabla de relación EGRESADO_APLICA_OFERTA_LABORAL
+        INSERT INTO Proyecto_BD.EGRESADO_APLICA_OFERTA_LABORAL (EGRESADO_Cedula, OFERTA_LABORAL_No_oferta)
+        VALUES (v_egresado_cedula, p_oferta_laboral_no);
+
+        SELECT 'El egresado ha aplicado exitosamente a la oferta laboral.';
+    END IF;
+    
+END //
+
+DELIMITER ;
+
+

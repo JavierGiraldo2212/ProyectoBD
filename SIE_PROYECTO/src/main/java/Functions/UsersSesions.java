@@ -103,6 +103,7 @@ public class UsersSesions {
         }
         return false;
     }
+    
     public Connection getConnection() {
         if (this.connection == null) {
             System.err.println("Conexión no establecida. Devuelve null.");
@@ -162,7 +163,7 @@ public class UsersSesions {
     }
 
     // En UsersSesions.java, modificar el método Vista_OfertasLaborales para soportar filtrado múltiple
-public void Vista_OfertasLaboralesFiltrado(DefaultTableModel model, String filtroEmpresa, String filtroEstado, String filtroArea) {
+    public void Vista_OfertasLaboralesFiltrado(DefaultTableModel model, String filtroEmpresa, String filtroEstado, String filtroArea) {
     Connection conn = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;
@@ -237,5 +238,47 @@ public void Vista_OfertasLaboralesFiltrado(DefaultTableModel model, String filtr
     }
 }
 
+
+    public String aplicarOfertaLaboral(int noOfertaLaboral) {
+    String resultado = "";
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    String correoElectronico = this.name;
+
+    try {
+        conn = this.connection; // Obtener la conexión establecida
+
+        String sql = "{CALL AplicarOfertaLaboral(?, ?)}"; // Llamada al procedimiento almacenado
+        stmt = conn.prepareStatement(sql);
+        stmt.setString(1, correoElectronico);
+        stmt.setInt(2, noOfertaLaboral);
+
+        rs = stmt.executeQuery(); // Ejecutar la consulta
+
+        if (rs.next()) {
+            resultado = rs.getString(1); // Obtener el resultado del procedimiento
+        }
+    } catch (SQLException e) {
+        e.printStackTrace(); // Manejar excepciones SQL
+        resultado = "Error al aplicar a la oferta laboral.";
+    } finally {
+        // Cerrar los recursos
+        try {
+            if (rs != null)
+                rs.close();
+            if (stmt != null)
+                stmt.close();
+            // No cerrar la conexión aquí, para poder reutilizarla
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejar excepciones al cerrar recursos
+        }
+    }
+
+    // Mostrar una alerta con el resultado
+    JOptionPane.showMessageDialog(null, resultado, "Resultado de la Postulación", JOptionPane.INFORMATION_MESSAGE);
+
+    return resultado; // Devolver el resultado del procedimiento
+}
 
 }
