@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
+
+import Functions.UsersSesions;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import java.awt.Choice;
@@ -15,8 +18,10 @@ import java.awt.List;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import java.sql.CallableStatement;
 
 public class RegistroEgresados extends JPanel {
 
@@ -34,11 +39,13 @@ public class RegistroEgresados extends JPanel {
     private JTextField grupoEtnicoField;
     private JTextField textField;
     private JPasswordField passwordField;
+    private UsersSesions userF;
 
     /**
      * Create the panel.
      */
-    public RegistroEgresados() {
+    public RegistroEgresados(UsersSesions userSession) {
+        this.userF = userSession;
         setBackground(Color.WHITE);
 
         JPanel panelIzq = new JPanel();
@@ -93,9 +100,63 @@ public class RegistroEgresados extends JPanel {
         JButton btnRegEg = new JButton("");
         btnRegEg.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Registrar egresado
+        // CREAR EGRESADO
+        System.out.println("CREANDO EGRESADO");
+
+        // Obtener los valores de los campos de texto
+        String cedula = cedulaField.getText();
+        String facultadId = facultadField.getText();
+        String fechaNacimiento = fechaNacimientoField.getText();
+        String nombre = nombreField.getText();
+        String primerApellido = primerApellidoField.getText();
+        String segundoApellido = segundoApellidoField.getText();
+        String direccion = direccionField.getText();
+        String ciudad = ciudadField.getText();
+        String pais = paisField.getText();
+        String correoElectronico = correoElectronicoField.getText();
+        String contrasenia = passwordField.getText();// Ajusta esto según tus necesidades
+        String genero = generoField.getText();
+        String grupoEtnico = grupoEtnicoField.getText();
+        String equipoId = null;
+        CallableStatement callableStatement = null;   /// Se deja null por que no se incluyo en la interfaz
+
+        try {
+            // Preparar la llamada al procedimiento almacenado
+            String sql = "{CALL sp_crear_egresado(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            callableStatement = userF.getConnection().prepareCall(sql);
+
+            // Establecer los parámetros del procedimiento
+            callableStatement.setLong(1, Long.parseLong(cedula));
+            callableStatement.setInt(2, Integer.parseInt(facultadId));
+            callableStatement.setDate(3, java.sql.Date.valueOf(fechaNacimiento));
+            callableStatement.setString(4, nombre);
+            callableStatement.setString(5, primerApellido);
+            callableStatement.setString(6, segundoApellido);
+            callableStatement.setString(7, direccion);
+            callableStatement.setString(8, ciudad);
+            callableStatement.setString(9, pais);
+            callableStatement.setString(10, correoElectronico);
+            callableStatement.setString(11, contrasenia);
+            callableStatement.setString(12, genero);
+            callableStatement.setString(13, grupoEtnico);
+            callableStatement.setNull(14, java.sql.Types.INTEGER);
+
+            // Ejecutar el procedimiento almacenado
+            callableStatement.execute();
+
+            System.out.println("Egresado creado exitosamente.");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            // Cerrar CallableStatement
+            try {
+                if (callableStatement != null) callableStatement.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
             }
-        });
+        }
+    }
+});
         btnRegEg.setIcon(new ImageIcon(RegistroEgresados.class.getResource("/images/BotonRegEg.png")));
 
         JLabel UserLabel = new JLabel("Usuario");

@@ -29,7 +29,7 @@ public class EmpresaOferta extends JPanel {
         ofertaCrear.setLocation(0, 0);
         ofertaCrear.setSize(1045, 708);
 
-        OfertaActualizar ofertaActualizar = new OfertaActualizar();
+        OfertaActualizar ofertaActualizar = new OfertaActualizar(userF);
         ofertaActualizar.setLocation(0, 0);
         ofertaActualizar.setSize(1045, 708);
 
@@ -81,7 +81,7 @@ public class EmpresaOferta extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // UPDATE OFFER
                 panelAux.removeAll();
-                OfertaActualizar ofertaActualizar = new OfertaActualizar(); // Usar la conexión
+                OfertaActualizar ofertaActualizar = new OfertaActualizar(userF); // Usar la conexión
                 ofertaActualizar.setLocation(0, 0);
                 ofertaActualizar.setSize(1045, 708);
                 panelAux.add(ofertaActualizar);
@@ -200,7 +200,7 @@ public class EmpresaOferta extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // UPDATE OFFER
                 panelAux.removeAll();
-                OfertaActualizar ofertaActualizar = new OfertaActualizar(); // Usar la conexión
+                OfertaActualizar ofertaActualizar = new OfertaActualizar(userF); // Usar la conexión
                 ofertaActualizar.setLocation(0, 0);
                 ofertaActualizar.setSize(1045, 708);
                 panelAux.add(ofertaActualizar);

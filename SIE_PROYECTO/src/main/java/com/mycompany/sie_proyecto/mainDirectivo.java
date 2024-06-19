@@ -29,10 +29,10 @@ public class mainDirectivo extends JPanel {
     public mainDirectivo(JPanel cardPanel, UsersSesions userF) {
 
 
-        RegistroEgresados REg = new RegistroEgresados();
+        RegistroEgresados REg = new RegistroEgresados(userF);
         REg.setLocation(0, 0);
         
-        RegistroEmpresas REm = new RegistroEmpresas();
+        RegistroEmpresas REm = new RegistroEmpresas(userF);
         REm.setLocation(0, 0);
 
         contentPane = new JPanel();
