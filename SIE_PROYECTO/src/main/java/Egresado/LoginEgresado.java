@@ -1,4 +1,4 @@
-package com.mycompany.sie_proyecto;
+package Egresado;
 
 import Functions.UsersSesions;
 

@@ -1,4 +1,4 @@
-package com.mycompany.sie_proyecto;
+package Egresado;
 
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
@@ -11,6 +11,9 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import com.mycompany.sie_proyecto.UseEmpresa;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
@@ -61,9 +64,8 @@ public class EgresadosDatos extends JPanel {
 
         // Title Label
         JLabel lblTitulo = new JLabel("");
-        lblTitulo.setIcon(new ImageIcon(UseEmpresa.class.getResource("/images/Egresados/LogoEgresados.png")));
+        lblTitulo.setIcon(new ImageIcon(getClass().getResource("/images/Egresados/LogoEgresados.png")));
         lblTitulo.setBackground(Color.WHITE);
-
         // Field Labels
         JLabel cedulaLabel = new JLabel("Cedula:");
         cedulaLabel.setFont(new Font("Arial Black", Font.PLAIN, 16));

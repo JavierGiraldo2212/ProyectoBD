@@ -1,4 +1,4 @@
-package com.mycompany.sie_proyecto;
+package Egresado;
 
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
@@ -83,7 +83,7 @@ public class MainEgresados extends JPanel {
                                 cl.show(cardPanel, "egresadosDatos");
                         }
                 });
-                btnMisDatos.setIcon(new ImageIcon(UseEmpresa.class.getResource("/images/Egresados/BotonDatos.png")));
+                btnMisDatos.setIcon(new ImageIcon(getClass().getResource("/images/Egresados/BotonDatos.png")));
                 btnMisDatos.setBackground(Color.WHITE);
 
                 JButton btnOfertasLaborales = new JButton("");
@@ -96,7 +96,7 @@ public class MainEgresados extends JPanel {
                 });
                 btnOfertasLaborales.setBackground(Color.WHITE);
                 btnOfertasLaborales
-                                .setIcon(new ImageIcon(UseEmpresa.class
+                                .setIcon(new ImageIcon(getClass()
                                                 .getResource("/images/Egresados/BotonOfertasLaborales.png")));
 
                 JButton btnEventos = new JButton("");
@@ -105,11 +105,11 @@ public class MainEgresados extends JPanel {
                                 // EVENTOS
                         }
                 });
-                btnEventos.setIcon(new ImageIcon(UseEmpresa.class.getResource("/images/Egresados/BotonEventos.png")));
+                btnEventos.setIcon(new ImageIcon(getClass().getResource("/images/Egresados/BotonEventos.png")));
                 btnEventos.setBackground(Color.WHITE);
 
                 JLabel lblTitulo = new JLabel("");
-                lblTitulo.setIcon(new ImageIcon(UseEmpresa.class.getResource("/images/Egresados/LogoEgresados.png")));
+                lblTitulo.setIcon(new ImageIcon(getClass().getResource("/images/Egresados/LogoEgresados.png")));
                 lblTitulo.setBackground(Color.WHITE);
                 GroupLayout gl_panelAux = new GroupLayout(panelAux);
                 gl_panelAux.setHorizontalGroup(
@@ -176,7 +176,7 @@ public class MainEgresados extends JPanel {
                 panelAux.setLayout(gl_panelAux);
 
                 JLabel lblNewLabel = new JLabel("");
-                lblNewLabel.setIcon(new ImageIcon(UseEmpresa.class.getResource("/images/fondo#unal.png")));
+                lblNewLabel.setIcon(new ImageIcon(getClass().getResource("/images/fondo#unal.png")));
                 lblNewLabel.setBackground(Color.WHITE);
                 GroupLayout gl_panel = new GroupLayout(panel);
                 gl_panel.setHorizontalGroup(
@@ -195,7 +195,7 @@ public class MainEgresados extends JPanel {
                 panel.setLayout(gl_panel);
 
                 JLabel LogoEgresados = new JLabel("");
-                LogoEgresados.setIcon(new ImageIcon(UseEmpresa.class.getResource("/images/logo_egresados_unal.png")));
+                LogoEgresados.setIcon(new ImageIcon(getClass().getResource("/images/logo_egresados_unal.png")));
                 LogoEgresados.setBackground(Color.WHITE);
 
                 JButton btnCerrarSesion = new JButton("");
@@ -207,11 +207,11 @@ public class MainEgresados extends JPanel {
                                         cl.show(cardPanel, "mainPanel");
                         }
                 });
-                btnCerrarSesion.setIcon(new ImageIcon(UseEmpresa.class.getResource("/images/logout.png")));
+                btnCerrarSesion.setIcon(new ImageIcon(getClass().getResource("/images/logout.png")));
                 btnCerrarSesion.setBackground(Color.WHITE);
 
                 JLabel lblInicio = new JLabel("");
-                lblInicio.setIcon(new ImageIcon(UseEmpresa.class.getResource("/images/BotonInicio.png")));
+                lblInicio.setIcon(new ImageIcon(getClass().getResource("/images/BotonInicio.png")));
                 lblInicio.setBackground(Color.WHITE);
                 GroupLayout gl_panelLateral = new GroupLayout(panelLateral);
                 gl_panelLateral.setHorizontalGroup(

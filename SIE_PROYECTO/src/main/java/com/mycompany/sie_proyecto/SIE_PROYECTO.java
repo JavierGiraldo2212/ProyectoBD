@@ -3,6 +3,11 @@ package com.mycompany.sie_proyecto;
 
 import Functions.UsersSesions;
 import javax.swing.*;
+
+import Egresado.EgresadosDatos;
+import Egresado.LoginEgresado;
+import Egresado.MainEgresados;
+
 import java.awt.*;
 
 public class SIE_PROYECTO {
