@@ -7,13 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import com.mysql.cj.jdbc.result.ResultSetMetaData;
+import com.mysql.cj.jdbc.CallableStatement;
+
 
 public class UsersSesions {
     public String name = "";
@@ -110,59 +113,9 @@ public class UsersSesions {
         }
         return this.connection;
     }
-    // Método EGRESADO: OFERTAS LABORALES
-    public void Vista_OfertasLaborales(DefaultTableModel model) {
-        Connection conn = null;
-        Statement stmt = null;
-        ResultSet rs = null;
-
-        try {
-            conn = this.connection; // Obtener la conexión establecida
-
-            stmt = conn.createStatement(); // Crear una declaración
-
-            String sql = "SELECT * FROM vw_ofertas_laborales"; // Consulta SQL
-            rs = stmt.executeQuery(sql); // Ejecutar la consulta
-
-            // Limpiar el modelo de la tabla antes de agregar nuevas filas
-            model.setRowCount(0);
-
-            // Procesar los resultados y añadir filas al modelo de la tabla
-            while (rs.next()) {
-                int noOferta = rs.getInt("No Oferta");
-                String empresa = rs.getString("Empresa");
-                String estado = rs.getString("Estado");
-                double salario = rs.getDouble("Salario");
-                String experienciaRequerida = rs.getString("Experiencia requerida");
-                String area = rs.getString("Area");
-                String tipoContrato = rs.getString("Tipo contrato");
-                String telefonoContacto = rs.getString("Telefono contacto");
-                String correo = rs.getString("Correo");
-                String correoResponsable = rs.getString("Correo responsable");
-
-                Object[] row = { noOferta, empresa, estado, salario, experienciaRequerida, area, tipoContrato,
-                        telefonoContacto, correo, correoResponsable };
-
-                model.addRow(row); // Agregar cada fila al modelo de la tabla
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace(); // Manejar excepciones SQL
-        } finally {
-            // Cerrar los recursos
-            try {
-                if (rs != null)
-                    rs.close();
-                if (stmt != null)
-                    stmt.close();
-                // No cerrar la conexión aquí, para poder reutilizarla
-            } catch (SQLException e) {
-                e.printStackTrace(); // Manejar excepciones al cerrar recursos
-            }
-        }
-    }
-
-    // En UsersSesions.java, modificar el método Vista_OfertasLaborales para soportar filtrado múltiple
+    // Método EGRESADOS
+    
+    // Modificar el método Vista_OfertasLaborales para soportar filtrado múltiple
     public void Vista_OfertasLaboralesFiltrado(DefaultTableModel model, String filtroEmpresa, String filtroEstado, String filtroArea) {
     Connection conn = null;
     PreparedStatement stmt = null;
@@ -238,7 +191,7 @@ public class UsersSesions {
     }
 }
 
-
+    // Aplicar oferta laboral
     public String aplicarOfertaLaboral(int noOfertaLaboral) {
     String resultado = "";
     Connection conn = null;
@@ -281,4 +234,92 @@ public class UsersSesions {
     return resultado; // Devolver el resultado del procedimiento
 }
 
+    // Información personal del egresado
+    public Map<String, Object> obtenerDatosEgresado() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Map<String, Object> datosEgresado = new HashMap<>();
+
+        try {
+            conn = this.connection; // Obtener la conexión establecida
+            String correo = this.name;
+            String sql = "{CALL p_obtener_datos_egresado(?)}"; // Llamada al procedimiento almacenado
+            stmt = conn.prepareCall(sql);
+            stmt.setString(1, correo);
+
+            rs = stmt.executeQuery(); // Ejecutar la consulta
+
+            // Procesar el ResultSet
+            if (rs.next()) {
+                // Obtener los datos del ResultSet y guardarlos en el mapa
+                datosEgresado.put("Cedula", rs.getLong("Cedula"));
+                datosEgresado.put("FACULTAD_idFACULTAD", rs.getInt("FACULTAD_idFACULTAD"));
+                datosEgresado.put("Nombre", rs.getString("Nombre"));
+                datosEgresado.put("PrimerApellido", rs.getString("PrimerApellido"));
+                datosEgresado.put("SegundoApellido", rs.getString("SegundoApellido"));
+                datosEgresado.put("Direccion", rs.getString("Direccion"));
+                datosEgresado.put("Ciudad", rs.getString("Ciudad"));
+                datosEgresado.put("Pais", rs.getString("Pais"));
+                datosEgresado.put("CorreoElectronico", rs.getString("CorreoElectronico"));
+                datosEgresado.put("GrupoEtnico", rs.getString("GrupoEtnico"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejar excepciones SQL
+        } finally {
+            // Cerrar los recursos
+            try {
+                if (rs != null)
+                    rs.close();
+                if (stmt != null)
+                    stmt.close();
+                // No cerrar la conexión aquí, para poder reutilizarla
+            } catch (SQLException e) {
+                e.printStackTrace(); // Manejar excepciones al cerrar recursos
+            }
+        }
+
+        return datosEgresado;
+    }
+
+    // Actualizar datos de un egresado 
+    public int actualizarDatosEgresado(String nombre, String primerApellido,
+            String segundoApellido, String direccion, String ciudad, String pais) {
+        
+        Connection conn = null;
+        CallableStatement stmt = null;
+        int rowsUpdated = 0;
+        String correoElectronico = this.name;
+
+        try {
+            conn = this.connection; // Obtener la conexión establecida
+            String sql = "{CALL p_actualizar_datos_egresado_from_egreesado(?, ?, ?, ?, ?, ?, ?)}";
+            
+            stmt = (CallableStatement) conn.prepareCall(sql);
+            stmt.setString(1, correoElectronico);
+            stmt.setString(2, nombre);
+            stmt.setString(3, primerApellido);
+            stmt.setString(4, segundoApellido);
+            stmt.setString(5, direccion);
+            stmt.setString(6, ciudad);
+            stmt.setString(7, pais);
+
+            rowsUpdated = stmt.executeUpdate(); // Ejecutar y obtener filas actualizadas
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejar excepciones SQL
+        } finally {
+            // Cerrar los recursos
+            try {
+                if (stmt != null)
+                    stmt.close();
+                // No cerrar la conexión aquí, para poder reutilizarla
+            } catch (SQLException e) {
+                e.printStackTrace(); // Manejar excepciones al cerrar recursos
+            }
+        }
+
+        return rowsUpdated;
+    }   
 }

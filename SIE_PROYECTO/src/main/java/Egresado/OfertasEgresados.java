@@ -1,5 +1,5 @@
 
-package com.mycompany.sie_proyecto;
+package Egresado;
 
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
@@ -24,7 +24,7 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Choice;
 
-public class ofertasEgresados extends JPanel {
+public class OfertasEgresados extends JPanel {
 
         private JTextField textEmpresa;
         private final Choice choiceEstado = new Choice();
@@ -33,7 +33,7 @@ public class ofertasEgresados extends JPanel {
         private JTable table;
         private DefaultTableModel tableModel;
 
-        public ofertasEgresados(JPanel cardPanel, UsersSesions userF) {
+        public OfertasEgresados(JPanel cardPanel, UsersSesions userF) {
                 setBackground(Color.WHITE);
 
                 // Configure the Choice 'choiceEstado' with desired options
@@ -54,7 +54,7 @@ public class ofertasEgresados extends JPanel {
 
                 JLabel lblTitulo = new JLabel("");
                 lblTitulo.setIcon(new ImageIcon(
-                                ofertasEgresados.class.getResource("/images/Egresados/LogoEgresados.png")));
+                                OfertasEgresados.class.getResource("/images/Egresados/LogoEgresados.png")));
                 lblTitulo.setBackground(Color.WHITE);
 
                 JLabel lblSubtitulo = new JLabel("OFERTAS LABORALES");
@@ -148,8 +148,9 @@ public class ofertasEgresados extends JPanel {
 
                         }
                 });
-                btnBusqueda.setIcon(new ImageIcon(ofertasEgresados.class.getResource("/images/BotonBusqueda.png")));
+                btnBusqueda.setIcon(new ImageIcon(OfertasEgresados.class.getResource("/images/BotonBusqueda.png")));
                 btnBusqueda.setBackground(Color.WHITE);
+                btnBusqueda.setBorderPainted(false);
 
                 JLabel lblEmpresaFiltro = new JLabel("Filtrar por empresa");
                 lblEmpresaFiltro.setFont(new Font("Arial Black", Font.PLAIN, 20));
@@ -188,9 +189,9 @@ public class ofertasEgresados extends JPanel {
                         }
                 });
                 btnSollicitud.setIcon(
-                                new ImageIcon(UseEmpresa.class.getResource("/images/Egresados/BotonPostular.png")));
+                                new ImageIcon(getClass().getResource("/images/Egresados/BotonPostular.png")));
                 btnSollicitud.setBackground(Color.WHITE);
-
+                btnSollicitud.setBorderPainted(false);
                 GroupLayout gl_panelBuscador = new GroupLayout(panelBuscador);
                 panelBuscador.setBackground(Color.WHITE);
                 gl_panelBuscador.setHorizontalGroup(
@@ -307,7 +308,7 @@ public class ofertasEgresados extends JPanel {
 
                 JLabel LogoEgresados = new JLabel("");
                 LogoEgresados.setIcon(
-                                new ImageIcon(ofertasEgresados.class.getResource("/images/logo_egresados_unal.png")));
+                                new ImageIcon(OfertasEgresados.class.getResource("/images/logo_egresados_unal.png")));
                 LogoEgresados.setBackground(Color.WHITE);
 
                 JButton btnCerrarSesion = new JButton("");
@@ -319,8 +320,9 @@ public class ofertasEgresados extends JPanel {
                                         cl.show(cardPanel, "mainPanel");
                         }
                 });
-                btnCerrarSesion.setIcon(new ImageIcon(ofertasEgresados.class.getResource("/images/logout.png")));
+                btnCerrarSesion.setIcon(new ImageIcon(OfertasEgresados.class.getResource("/images/logout.png")));
                 btnCerrarSesion.setBackground(Color.WHITE);
+                btnCerrarSesion.setBorderPainted(false);
 
                 JButton btnBack = new JButton("");
                 btnBack.addActionListener(new ActionListener() {
@@ -331,7 +333,8 @@ public class ofertasEgresados extends JPanel {
                         }
                 });
                 btnBack.setBackground(Color.WHITE);
-                btnBack.setIcon(new ImageIcon(ofertasEgresados.class.getResource("/images/botonBack.png")));
+                btnBack.setIcon(new ImageIcon(OfertasEgresados.class.getResource("/images/botonBack.png")));
+                btnBack.setBorderPainted(false);
                 GroupLayout gl_panelLateral = new GroupLayout(panelLateral);
                 panelLateral.setLayout(gl_panelLateral);
                 gl_panelLateral.setHorizontalGroup(
