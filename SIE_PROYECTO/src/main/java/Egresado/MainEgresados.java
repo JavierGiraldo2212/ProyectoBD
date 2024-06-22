@@ -10,6 +10,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.SwingConstants;
 
 import Functions.UsersSesions;
 
@@ -27,215 +28,214 @@ public class MainEgresados extends JPanel {
                 JPanel panelLateral = new JPanel();
                 panelLateral.setBackground(Color.WHITE);
 
-                JPanel panelAux = new JPanel();
-                panelAux.setBackground(Color.WHITE);
+                JPanel panelUnal = new JPanel();
+                panelUnal.setBackground(Color.WHITE);
 
-                JPanel panel = new JPanel();
-                panel.setBackground(Color.WHITE);
+                JPanel panelBoton = new JPanel();
+                panelBoton.setBackground(Color.WHITE);
                 GroupLayout groupLayout = new GroupLayout(this);
                 groupLayout.setHorizontalGroup(
-                                groupLayout.createParallelGroup(Alignment.TRAILING)
-                                                .addGroup(groupLayout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addGroup(groupLayout
-                                                                                .createParallelGroup(Alignment.TRAILING)
-                                                                                .addComponent(panel, Alignment.LEADING,
-                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addGroup(Alignment.LEADING, groupLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(panelLateral,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                214,
-                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                .addPreferredGap(
-                                                                                                                ComponentPlacement.RELATED)
-                                                                                                .addComponent(panelAux,
-                                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                                1049,
-                                                                                                                Short.MAX_VALUE)))
-                                                                .addContainerGap()));
-                groupLayout.setVerticalGroup(
                                 groupLayout.createParallelGroup(Alignment.LEADING)
                                                 .addGroup(groupLayout.createSequentialGroup()
                                                                 .addContainerGap()
                                                                 .addGroup(groupLayout
-                                                                                .createParallelGroup(Alignment.LEADING,
-                                                                                                false)
-                                                                                .addComponent(panelAux,
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addGroup(groupLayout
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(panelLateral,
+                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                229,
+                                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                                .addPreferredGap(
+                                                                                                                ComponentPlacement.UNRELATED)
+                                                                                                .addComponent(panelBoton,
+                                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                                1021,
+                                                                                                                Short.MAX_VALUE))
+                                                                                .addComponent(panelUnal,
                                                                                                 GroupLayout.DEFAULT_SIZE,
+                                                                                                1260, Short.MAX_VALUE))
+                                                                .addContainerGap()));
+                groupLayout.setVerticalGroup(
+                                groupLayout.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addGroup(groupLayout
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addComponent(panelBoton,
                                                                                                 GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
+                                                                                                370, Short.MAX_VALUE)
                                                                                 .addComponent(panelLateral,
                                                                                                 GroupLayout.DEFAULT_SIZE,
-                                                                                                373, Short.MAX_VALUE))
-                                                                .addPreferredGap(ComponentPlacement.RELATED)
-                                                                .addComponent(panel, GroupLayout.DEFAULT_SIZE, 319,
-                                                                                Short.MAX_VALUE)
+                                                                                                370, Short.MAX_VALUE))
+                                                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                                                .addComponent(panelUnal, GroupLayout.PREFERRED_SIZE,
+                                                                                317, GroupLayout.PREFERRED_SIZE)
                                                                 .addContainerGap()));
 
-                JButton btnMisDatos = new JButton("");
-                btnMisDatos.addActionListener(new ActionListener() {
+                JLabel lblTitulo = new JLabel("");
+                lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+                lblTitulo.setIcon(
+                                new ImageIcon(MainEgresados.class.getResource("/images/Egresados/LogoEgresados.png")));
+                lblTitulo.setBackground(Color.WHITE);
+
+                JButton btnDatos = new JButton("");
+                btnDatos.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                                // Mis datos
+                                // VER DATOS EGRESADO
                                 CardLayout cl = (CardLayout) cardPanel.getLayout();
                                 cl.show(cardPanel, "egresadosDatos");
                         }
                 });
-                btnMisDatos.setIcon(new ImageIcon(getClass().getResource("/images/Egresados/BotonDatos.png")));
-                btnMisDatos.setBackground(Color.WHITE);
+                btnDatos.setBackground(Color.WHITE);
+                btnDatos.setIcon(new ImageIcon(MainEgresados.class.getResource("/images/Egresados/BotonDatos.png")));
+                btnDatos.setBorderPainted(false);
 
-                JButton btnOfertasLaborales = new JButton("");
-                btnOfertasLaborales.addActionListener(new ActionListener() {
+                JButton btnBuscarOferta = new JButton("");
+                btnBuscarOferta.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                                // OFERTA LABORAL
+                                // VER OFERTAS Y POSTULAR
                                 CardLayout cl = (CardLayout) cardPanel.getLayout();
                                 cl.show(cardPanel, "egresadosOferta");
                         }
                 });
-                btnOfertasLaborales.setBackground(Color.WHITE);
-                btnOfertasLaborales
-                                .setIcon(new ImageIcon(getClass()
-                                                .getResource("/images/Egresados/BotonOfertasLaborales.png")));
+                btnBuscarOferta.setBackground(Color.WHITE);
+                btnBuscarOferta.setIcon(new ImageIcon(
+                                MainEgresados.class.getResource("/images/Egresados/BotonBuscarOfertasLaborales.png")));
+                btnBuscarOferta.setBorderPainted(false);
 
                 JButton btnEventos = new JButton("");
                 btnEventos.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                                // EVENTOS
+                                // VER EVENTOS
+                                CardLayout cl = (CardLayout) cardPanel.getLayout();
+                                cl.show(cardPanel, "egresadosEvento");
                         }
                 });
-                btnEventos.setIcon(new ImageIcon(getClass().getResource("/images/Egresados/BotonEventos.png")));
+                btnEventos.setIcon(
+                                new ImageIcon(MainEgresados.class.getResource("/images/Egresados/BotonEventos.png")));
                 btnEventos.setBackground(Color.WHITE);
+                btnEventos.setBorderPainted(false);
 
-                JLabel lblTitulo = new JLabel("");
-                lblTitulo.setIcon(new ImageIcon(getClass().getResource("/images/Egresados/LogoEgresados.png")));
-                lblTitulo.setBackground(Color.WHITE);
-                GroupLayout gl_panelAux = new GroupLayout(panelAux);
-                gl_panelAux.setHorizontalGroup(
-                                gl_panelAux.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(gl_panelAux.createSequentialGroup()
-                                                                .addGroup(gl_panelAux
+                JButton btnNewButton = new JButton("");
+                btnNewButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                                // VER OFERTAS POSTULADAS Y ANULAR POSTULACIÓN
+                                CardLayout cl = (CardLayout) cardPanel.getLayout();
+                                cl.show(cardPanel, "misOfertasEgresado");
+                        }
+                });
+                btnNewButton.setBackground(Color.WHITE);
+                btnNewButton.setIcon(new ImageIcon(
+                                MainEgresados.class.getResource("/images/Egresados/BotonVerOfertasLaborales.png")));
+                btnNewButton.setBorderPainted(false);
+
+                GroupLayout gl_panelBoton = new GroupLayout(panelBoton);
+                gl_panelBoton.setHorizontalGroup(
+                                gl_panelBoton.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(gl_panelBoton.createSequentialGroup()
+                                                                .addGap(159)
+                                                                .addGroup(gl_panelBoton
                                                                                 .createParallelGroup(Alignment.LEADING)
-                                                                                .addGroup(gl_panelAux
+                                                                                .addComponent(btnBuscarOferta,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                231,
+                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(btnDatos,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                231,
+                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(197)
+                                                                .addGroup(gl_panelBoton
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addComponent(btnEventos,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                231,
+                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(btnNewButton,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                249,
+                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                .addContainerGap(185, Short.MAX_VALUE))
+                                                .addGroup(gl_panelBoton.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE,
+                                                                                359, GroupLayout.PREFERRED_SIZE)
+                                                                .addContainerGap(652, Short.MAX_VALUE)));
+                gl_panelBoton.setVerticalGroup(
+                                gl_panelBoton.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(gl_panelBoton.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 64,
+                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(36)
+                                                                .addGroup(gl_panelBoton
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addGroup(gl_panelBoton
                                                                                                 .createSequentialGroup()
-                                                                                                .addGap(28)
-                                                                                                .addComponent(btnMisDatos,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                300,
-                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18)
-                                                                                                .addComponent(btnOfertasLaborales,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                315,
-                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18)
                                                                                                 .addComponent(btnEventos,
                                                                                                                 GroupLayout.PREFERRED_SIZE,
-                                                                                                                338,
-                                                                                                                GroupLayout.PREFERRED_SIZE))
-                                                                                .addGroup(gl_panelAux
-                                                                                                .createSequentialGroup()
-                                                                                                .addGap(206)
-                                                                                                .addComponent(lblTitulo,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                600,
-                                                                                                                GroupLayout.PREFERRED_SIZE)))
-                                                                .addContainerGap(32, Short.MAX_VALUE)));
-                gl_panelAux.setVerticalGroup(
-                                gl_panelAux.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(Alignment.TRAILING, gl_panelAux.createSequentialGroup()
-                                                                .addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 91,
-                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                .addGroup(gl_panelAux
-                                                                                .createParallelGroup(Alignment.LEADING,
-                                                                                                false)
-                                                                                .addGroup(gl_panelAux
-                                                                                                .createSequentialGroup()
-                                                                                                .addGap(18)
-                                                                                                .addComponent(btnOfertasLaborales,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                134,
+                                                                                                                107,
                                                                                                                 GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(89))
-                                                                                .addGroup(Alignment.TRAILING,
-                                                                                                gl_panelAux.createSequentialGroup()
-                                                                                                                .addPreferredGap(
-                                                                                                                                ComponentPlacement.RELATED,
-                                                                                                                                116,
-                                                                                                                                Short.MAX_VALUE)
-                                                                                                                .addGroup(gl_panelAux
-                                                                                                                                .createParallelGroup(
-                                                                                                                                                Alignment.TRAILING)
-                                                                                                                                .addComponent(btnEventos,
-                                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                129,
-                                                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                                                .addComponent(btnMisDatos))
-                                                                                                                .addGap(27)))));
-                panelAux.setLayout(gl_panelAux);
+                                                                                                .addGap(18)
+                                                                                                .addComponent(btnNewButton))
+                                                                                .addGroup(gl_panelBoton
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(btnDatos)
+                                                                                                .addGap(18)
+                                                                                                .addComponent(btnBuscarOferta,
+                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                107,
+                                                                                                                GroupLayout.PREFERRED_SIZE)))
+                                                                .addContainerGap(15, Short.MAX_VALUE)));
+                panelBoton.setLayout(gl_panelBoton);
 
-                JLabel lblNewLabel = new JLabel("");
-                lblNewLabel.setIcon(new ImageIcon(getClass().getResource("/images/fondo#unal.png")));
-                lblNewLabel.setBackground(Color.WHITE);
-                GroupLayout gl_panel = new GroupLayout(panel);
-                gl_panel.setHorizontalGroup(
-                                gl_panel.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(gl_panel.createSequentialGroup()
+                JLabel FondoUnal = new JLabel("");
+                FondoUnal.setIcon(new ImageIcon(MainEgresados.class.getResource("/images/fondo#unal.png")));
+                GroupLayout gl_panelUnal = new GroupLayout(panelUnal);
+                gl_panelUnal.setHorizontalGroup(
+                                gl_panelUnal.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(gl_panelUnal.createSequentialGroup()
+                                                                .addComponent(FondoUnal, GroupLayout.PREFERRED_SIZE,
+                                                                                1250, Short.MAX_VALUE)
+                                                                .addContainerGap()));
+                gl_panelUnal.setVerticalGroup(
+                                gl_panelUnal.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(gl_panelUnal.createSequentialGroup()
                                                                 .addContainerGap()
-                                                                .addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE,
-                                                                                1249, Short.MAX_VALUE)
-                                                                .addContainerGap()));
-                gl_panel.setVerticalGroup(
-                                gl_panel.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
-                                                                .addContainerGap(16, Short.MAX_VALUE)
-                                                                .addComponent(lblNewLabel)
-                                                                .addContainerGap()));
-                panel.setLayout(gl_panel);
+                                                                .addComponent(FondoUnal)
+                                                                .addContainerGap(36, Short.MAX_VALUE)));
+                panelUnal.setLayout(gl_panelUnal);
+                panelLateral.setLayout(null);
 
-                JLabel LogoEgresados = new JLabel("");
-                LogoEgresados.setIcon(new ImageIcon(getClass().getResource("/images/logo_egresados_unal.png")));
-                LogoEgresados.setBackground(Color.WHITE);
+                JLabel LogosEgresados = new JLabel("");
+                LogosEgresados.setIcon(
+                                new ImageIcon(MainEgresados.class.getResource("/images/logo_egresados_unal.png")));
+                LogosEgresados.setBackground(Color.WHITE);
+                LogosEgresados.setBounds(10, 11, 158, 26);
+                panelLateral.add(LogosEgresados);
 
-                JButton btnCerrarSesion = new JButton("");
-                btnCerrarSesion.addActionListener(new ActionListener() {
+                JButton btnLogOut = new JButton("");
+                btnLogOut.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                                // logout
+                                // LOGOUT
                                 CardLayout cl = (CardLayout) cardPanel.getLayout();
                                 if (userF.logout())
                                         cl.show(cardPanel, "mainPanel");
                         }
                 });
-                btnCerrarSesion.setIcon(new ImageIcon(getClass().getResource("/images/logout.png")));
-                btnCerrarSesion.setBackground(Color.WHITE);
+                btnLogOut.setIcon(new ImageIcon(MainEgresados.class.getResource("/images/logout.png")));
+                btnLogOut.setBackground(Color.WHITE);
+                btnLogOut.setBorderPainted(false);
+                btnLogOut.setBounds(10, 324, 158, 35);
+                panelLateral.add(btnLogOut);
 
-                JLabel lblInicio = new JLabel("");
-                lblInicio.setIcon(new ImageIcon(getClass().getResource("/images/BotonInicio.png")));
-                lblInicio.setBackground(Color.WHITE);
-                GroupLayout gl_panelLateral = new GroupLayout(panelLateral);
-                gl_panelLateral.setHorizontalGroup(
-                                gl_panelLateral.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(gl_panelLateral.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addGroup(gl_panelLateral
-                                                                                .createParallelGroup(Alignment.TRAILING)
-                                                                                .addComponent(btnCerrarSesion)
-                                                                                .addComponent(lblInicio)
-                                                                                .addComponent(LogoEgresados))
-                                                                .addContainerGap(33, Short.MAX_VALUE)));
-                gl_panelLateral.setVerticalGroup(
-                                gl_panelLateral.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(gl_panelLateral.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addComponent(LogoEgresados)
-                                                                .addGap(18)
-                                                                .addComponent(lblInicio)
-                                                                .addPreferredGap(ComponentPlacement.RELATED, 319,
-                                                                                Short.MAX_VALUE)
-                                                                .addComponent(btnCerrarSesion)
-                                                                .addContainerGap()));
-                panelLateral.setLayout(gl_panelLateral);
+                JLabel LogoInicio = new JLabel("");
+                LogoInicio.setBackground(Color.WHITE);
+                LogoInicio.setIcon(new ImageIcon(MainEgresados.class.getResource("/images/BotonInicio.png")));
+                LogoInicio.setBounds(10, 48, 90, 44);
+                panelLateral.add(LogoInicio);
                 setLayout(groupLayout);
+
         }
 }
