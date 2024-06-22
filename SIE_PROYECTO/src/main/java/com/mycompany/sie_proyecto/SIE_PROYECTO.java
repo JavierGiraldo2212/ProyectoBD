@@ -7,7 +7,9 @@ import javax.swing.*;
 import Egresado.DatosEgresados;
 import Egresado.LoginEgresado;
 import Egresado.MainEgresados;
+import Egresado.MisOfertasEgresado;
 import Egresado.OfertasEgresados;
+import Egresado.EventosEgresado;
 
 import java.awt.*;
 
@@ -37,11 +39,17 @@ public class SIE_PROYECTO {
         MainEgresados mainEgresados = new MainEgresados(cardPanel, userF);
         DatosEgresados datosEgresados = new DatosEgresados(cardPanel, userF);
         OfertasEgresados ofertasEgresados = new OfertasEgresados(cardPanel, userF);
+        EventosEgresado eventosEgresado = new EventosEgresado(cardPanel, userF);
+        MisOfertasEgresado misOfertasEgresado = new MisOfertasEgresado(cardPanel, userF);
+
 
         cardPanel.add(loginEgresado, "loginEgresado");
         cardPanel.add(mainEgresados, "mainEgresado");
         cardPanel.add(datosEgresados, "egresadosDatos");
         cardPanel.add(ofertasEgresados, "egresadosOferta");
+        cardPanel.add(eventosEgresado, "egresadosEvento");
+        cardPanel.add(misOfertasEgresado, "misOfertasEgresado");
+
         
         // Create the login panel for "Empresa" and its mainPanel
         LoginEmpresa loginEmpresa = new LoginEmpresa(cardPanel, userF);

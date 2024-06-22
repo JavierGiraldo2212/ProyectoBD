@@ -1,10 +1,10 @@
-
 package Egresado;
 
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -185,6 +185,8 @@ public class OfertasEgresados extends JPanel {
 
                                 } else {
                                         System.out.println("No se ha seleccionado ninguna fila.");
+                                        JOptionPane.showMessageDialog(null, "No se ha seleccionado ninguna fila.", "Error", JOptionPane.ERROR_MESSAGE);
+
                                 }
                         }
                 });

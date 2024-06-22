@@ -108,7 +108,8 @@ public class MainEgresados extends JPanel {
                 btnEventos.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                                 // VER EVENTOS
-
+                                CardLayout cl = (CardLayout) cardPanel.getLayout();
+                                cl.show(cardPanel, "egresadosEvento");
                         }
                 });
                 btnEventos.setIcon(
@@ -120,6 +121,8 @@ public class MainEgresados extends JPanel {
                 btnNewButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                                 // VER OFERTAS POSTULADAS Y ANULAR POSTULACIÓN
+                                CardLayout cl = (CardLayout) cardPanel.getLayout();
+                                cl.show(cardPanel, "misOfertasEgresado");
                         }
                 });
                 btnNewButton.setBackground(Color.WHITE);

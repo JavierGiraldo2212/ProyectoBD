@@ -22,7 +22,7 @@ public class MainEmpresa extends JPanel {
          * Create the panel.
          */
         public MainEmpresa(JPanel cardPanel, UsersSesions userF) {
-                setBackground(new Color(255, 255, 255));
+                setBackground(Color.WHITE);
 
                 // Main panel
                 JPanel panelPpal = new JPanel();

@@ -40,21 +40,23 @@ public class EmpresaOferta extends JPanel {
         panelAux.setBackground(Color.WHITE);
         GroupLayout groupLayout = new GroupLayout(this);
         groupLayout.setHorizontalGroup(
-            groupLayout.createParallelGroup(Alignment.LEADING)
-                .addGroup(groupLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panelLateral, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(ComponentPlacement.UNRELATED)
-                    .addComponent(panelAux, GroupLayout.DEFAULT_SIZE, 1035, Short.MAX_VALUE)
-                    .addContainerGap()));
+                groupLayout.createParallelGroup(Alignment.LEADING)
+                        .addGroup(groupLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(panelLateral, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                .addComponent(panelAux, GroupLayout.DEFAULT_SIZE, 1035, Short.MAX_VALUE)
+                                .addContainerGap()));
         groupLayout.setVerticalGroup(
-            groupLayout.createParallelGroup(Alignment.LEADING)
-                .addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-                        .addComponent(panelAux, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
-                        .addComponent(panelLateral, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE))
-                    .addContainerGap()));
+                groupLayout.createParallelGroup(Alignment.LEADING)
+                        .addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+                                        .addComponent(panelAux, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 698,
+                                                Short.MAX_VALUE)
+                                        .addComponent(panelLateral, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 698,
+                                                Short.MAX_VALUE))
+                                .addContainerGap()));
 
         JLabel Titulo = new JLabel("");
         Titulo.setIcon(new ImageIcon(EmpresaOferta.class.getResource("/images/ofertaLaboral.png")));
@@ -94,27 +96,28 @@ public class EmpresaOferta extends JPanel {
 
         GroupLayout gl_panelAux = new GroupLayout(panelAux);
         gl_panelAux.setHorizontalGroup(
-            gl_panelAux.createParallelGroup(Alignment.TRAILING)
-                .addGroup(gl_panelAux.createSequentialGroup()
-                    .addContainerGap(259, Short.MAX_VALUE)
-                    .addComponent(Titulo, GroupLayout.PREFERRED_SIZE, 518, GroupLayout.PREFERRED_SIZE)
-                    .addGap(258))
-                .addGroup(Alignment.LEADING, gl_panelAux.createSequentialGroup()
-                    .addGap(221)
-                    .addComponent(btnCreate, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(ComponentPlacement.UNRELATED)
-                    .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(226, Short.MAX_VALUE)));
+                gl_panelAux.createParallelGroup(Alignment.TRAILING)
+                        .addGroup(gl_panelAux.createSequentialGroup()
+                                .addContainerGap(259, Short.MAX_VALUE)
+                                .addComponent(Titulo, GroupLayout.PREFERRED_SIZE, 518, GroupLayout.PREFERRED_SIZE)
+                                .addGap(258))
+                        .addGroup(Alignment.LEADING, gl_panelAux.createSequentialGroup()
+                                .addGap(221)
+                                .addComponent(btnCreate, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(226, Short.MAX_VALUE)));
         gl_panelAux.setVerticalGroup(
-            gl_panelAux.createParallelGroup(Alignment.LEADING)
-                .addGroup(gl_panelAux.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Titulo)
-                    .addGap(113)
-                    .addGroup(gl_panelAux.createParallelGroup(Alignment.TRAILING)
-                        .addComponent(btnCreate)
-                        .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(204, Short.MAX_VALUE)));
+                gl_panelAux.createParallelGroup(Alignment.LEADING)
+                        .addGroup(gl_panelAux.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Titulo)
+                                .addGap(113)
+                                .addGroup(gl_panelAux.createParallelGroup(Alignment.TRAILING)
+                                        .addComponent(btnCreate)
+                                        .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 261,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(204, Short.MAX_VALUE)));
         panelAux.setLayout(gl_panelAux);
 
         JLabel LogoEgresados = new JLabel("");
@@ -148,24 +151,24 @@ public class EmpresaOferta extends JPanel {
 
         GroupLayout gl_panelLateral = new GroupLayout(panelLateral);
         gl_panelLateral.setHorizontalGroup(
-            gl_panelLateral.createParallelGroup(Alignment.LEADING)
-                .addGroup(gl_panelLateral.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(gl_panelLateral.createParallelGroup(Alignment.LEADING)
-                        .addComponent(LogoEgresados)
-                        .addComponent(btnBack)
-                        .addComponent(btnNewButton))
-                    .addContainerGap(33, Short.MAX_VALUE)));
+                gl_panelLateral.createParallelGroup(Alignment.LEADING)
+                        .addGroup(gl_panelLateral.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(gl_panelLateral.createParallelGroup(Alignment.LEADING)
+                                        .addComponent(LogoEgresados)
+                                        .addComponent(btnBack)
+                                        .addComponent(btnNewButton))
+                                .addContainerGap(33, Short.MAX_VALUE)));
         gl_panelLateral.setVerticalGroup(
-            gl_panelLateral.createParallelGroup(Alignment.LEADING)
-                .addGroup(gl_panelLateral.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(LogoEgresados)
-                    .addGap(245)
-                    .addComponent(btnBack)
-                    .addPreferredGap(ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
-                    .addComponent(btnNewButton)
-                    .addGap(40)));
+                gl_panelLateral.createParallelGroup(Alignment.LEADING)
+                        .addGroup(gl_panelLateral.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(LogoEgresados)
+                                .addGap(245)
+                                .addComponent(btnBack)
+                                .addPreferredGap(ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
+                                .addComponent(btnNewButton)
+                                .addGap(40)));
         panelLateral.setLayout(gl_panelLateral);
         setLayout(groupLayout);
     }
@@ -173,7 +176,6 @@ public class EmpresaOferta extends JPanel {
     // Method to reset the panelAux to its initial state
     private void resetPanelAux() {
         panelAux.removeAll();
-        
 
         JLabel Titulo = new JLabel("");
         Titulo.setIcon(new ImageIcon(EmpresaOferta.class.getResource("/images/ofertaLaboral.png")));
@@ -185,7 +187,7 @@ public class EmpresaOferta extends JPanel {
                 // CREATE OFFER
                 panelAux.removeAll();
                 UsersSesions userF;
-                OfertaCrear ofertaCrear = new OfertaCrear(userF); 
+                OfertaCrear ofertaCrear = new OfertaCrear(userF);
                 ofertaCrear.setSize(1045, 708);
                 panelAux.add(ofertaCrear);
                 panelAux.revalidate();
@@ -213,27 +215,28 @@ public class EmpresaOferta extends JPanel {
 
         GroupLayout gl_panelAux = new GroupLayout(panelAux);
         gl_panelAux.setHorizontalGroup(
-            gl_panelAux.createParallelGroup(Alignment.TRAILING)
-                .addGroup(gl_panelAux.createSequentialGroup()
-                    .addContainerGap(259, Short.MAX_VALUE)
-                    .addComponent(Titulo, GroupLayout.PREFERRED_SIZE, 518, GroupLayout.PREFERRED_SIZE)
-                    .addGap(258))
-                .addGroup(Alignment.LEADING, gl_panelAux.createSequentialGroup()
-                    .addGap(221)
-                    .addComponent(btnCreate, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(ComponentPlacement.UNRELATED)
-                    .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(226, Short.MAX_VALUE)));
+                gl_panelAux.createParallelGroup(Alignment.TRAILING)
+                        .addGroup(gl_panelAux.createSequentialGroup()
+                                .addContainerGap(259, Short.MAX_VALUE)
+                                .addComponent(Titulo, GroupLayout.PREFERRED_SIZE, 518, GroupLayout.PREFERRED_SIZE)
+                                .addGap(258))
+                        .addGroup(Alignment.LEADING, gl_panelAux.createSequentialGroup()
+                                .addGap(221)
+                                .addComponent(btnCreate, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(226, Short.MAX_VALUE)));
         gl_panelAux.setVerticalGroup(
-            gl_panelAux.createParallelGroup(Alignment.LEADING)
-                .addGroup(gl_panelAux.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Titulo)
-                    .addGap(113)
-                    .addGroup(gl_panelAux.createParallelGroup(Alignment.TRAILING)
-                        .addComponent(btnCreate)
-                        .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(204, Short.MAX_VALUE)));
+                gl_panelAux.createParallelGroup(Alignment.LEADING)
+                        .addGroup(gl_panelAux.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Titulo)
+                                .addGap(113)
+                                .addGroup(gl_panelAux.createParallelGroup(Alignment.TRAILING)
+                                        .addComponent(btnCreate)
+                                        .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 261,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(204, Short.MAX_VALUE)));
         panelAux.setLayout(gl_panelAux);
         panelAux.revalidate();
         panelAux.repaint();
